@@ -1,0 +1,109 @@
+/* cassette player on song cards + now-playing pill. colors follow the room / skin / world. */
+.mu{margin:14px 0 6px;display:grid;gap:12px}
+.cas{position:relative;width:min(220px,82%);aspect-ratio:200/128;transform:rotate(-2deg);filter:drop-shadow(4px 4px 0 rgba(0,0,0,.35));transition:transform .3s}
+.mu:hover .cas,.mu.playing .cas{transform:rotate(1.5deg) scale(1.03)}
+.cs{width:100%;height:100%;display:block}
+.cb{fill:#1c1b22}.cl{fill:#f2e9d0}.cst{fill:var(--ac,#e8553d)}.cw{fill:#0c0c10;stroke:#555}.rc{fill:#d8d2c0}.rs{stroke:#1c1b22;stroke-width:2.4;fill:none}.cb2{fill:#2b2a33}.sc{fill:#777}
+.rl{transform-box:fill-box;transform-origin:center}
+.mu.playing .rl{animation:muspin 2.2s linear infinite}.mu.playing .r2{animation-duration:1.6s}
+@keyframes muspin{to{transform:rotate(360deg)}}
+.cap{position:absolute;left:11%;top:25%;width:78%;font:700 clamp(15px,3.4vw,19px)/1 var(--hand,Caveat,cursive);color:#26231d;transform:rotate(-1deg);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.side{position:absolute;right:12%;top:13%;font:700 10px var(--mono,monospace);letter-spacing:.1em;color:#26231d}
+.mu.no .cas,.mu.ld .cas{filter:grayscale(1) drop-shadow(4px 4px 0 rgba(0,0,0,.25));opacity:.55}
+.mc{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.mb{position:relative;min-width:46px;height:46px;padding:0 12px;border-radius:999px;border:2px solid currentColor;background:var(--ac,#e8553d);color:var(--onac,#111);font:700 13px var(--mono,monospace);cursor:pointer}
+.mu.no .mb{background:transparent;color:inherit;border-style:dashed}
+.mu.playing .mb::after{content:"";position:absolute;inset:-7px;border-radius:inherit;border:2px solid var(--ac,#e8553d);animation:mupulse 1.4s ease-out infinite}
+@keyframes mupulse{from{transform:scale(.85);opacity:.9}to{transform:scale(1.3);opacity:0}}
+.eq{display:flex;align-items:flex-end;gap:3px;height:20px}
+.eq i{width:4px;height:100%;background:currentColor;transform-origin:bottom;transform:scaleY(.16);opacity:.85}
+.mu.playing .eq i{animation:mueq .8s ease-in-out infinite alternate}
+.eq i:nth-child(2){animation-delay:-.25s!important}.eq i:nth-child(3){animation-delay:-.5s!important}.eq i:nth-child(4){animation-delay:-.15s!important}.eq i:nth-child(5){animation-delay:-.4s!important}
+@keyframes mueq{from{transform:scaleY(.18)}to{transform:scaleY(1)}}
+.mu:not(.has) .eq,.mu:not(.has) .mseek,.mu:not(.has) .mt{display:none}
+.mseek{flex:1 1 90px;min-width:90px;height:18px;background:none;color:inherit;cursor:pointer;-webkit-appearance:none;appearance:none}
+.mseek::-webkit-slider-runnable-track{height:0;border-top:2px dashed currentColor;opacity:.7}
+.mseek::-moz-range-track{height:0;border-top:2px dashed currentColor;opacity:.7}
+.mseek::-webkit-slider-thumb{-webkit-appearance:none;width:12px;height:12px;margin-top:-7px;background:var(--ac,#e8553d);border:2px solid currentColor;transform:rotate(45deg)}
+.mseek::-moz-range-thumb{width:10px;height:10px;background:var(--ac,#e8553d);border:2px solid currentColor;border-radius:0}
+.mt{font:11px var(--mono,monospace);opacity:.75;white-space:nowrap}
+#npl{position:fixed;z-index:36;left:50%;bottom:calc(18px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);display:flex;align-items:center;gap:10px;max-width:min(420px,92vw);padding:7px 8px 7px 10px;background:var(--bg);color:var(--ink);border:2px solid var(--ink);box-shadow:4px 4px 0 var(--ac);font:12px var(--mono,monospace)}
+#npl[hidden]{display:none}
+.npd{flex:none;width:22px;height:22px;border-radius:50%;border:1px solid var(--ink);background:radial-gradient(circle,var(--bg) 0 10%,var(--ac) 11% 34%,transparent 35%),repeating-radial-gradient(circle,#111 0 2px,#2c2c2c 2px 3px)}
+#npl.playing .npd{animation:muspin 2s linear infinite}
+.npt{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+#npl button{flex:none;width:28px;height:28px;background:none;border:1px solid var(--ink);color:inherit;font:inherit;cursor:pointer}
+@media(max-width:800px){#npl{bottom:calc(68px + env(safe-area-inset-bottom,0px))}}
+@media(prefers-reduced-motion:reduce){.mu .rl,.eq i,.mb::after,.npd{animation:none!important}}
+
+/* ===== each world gets its own kind of player ===== */
+/* the writer: ink-drawn cassette, typewriter key, rubber stamp */
+html[data-theme=writer] .cb{fill:#e3d7b8;stroke:#231e17;stroke-width:1.6}
+html[data-theme=writer] :is(.cl,.cw,.rc){fill:#f6efd9;stroke:#231e17}
+html[data-theme=writer] .cst{fill:#8c2a1e}html[data-theme=writer] .rs{stroke:#231e17;stroke-width:1.6}
+html[data-theme=writer] .cb2{fill:#d4c7a4;stroke:#231e17}html[data-theme=writer] .sc{fill:#231e17}
+html[data-theme=writer] .cas{filter:none;mix-blend-mode:multiply}
+html[data-theme=writer] :is(.cap,.side){font:17px var(--mono);letter-spacing:-.02em;color:#231e17}
+html[data-theme=writer] .mb{background:#f6efd9;color:#231e17;border-color:#231e17;box-shadow:0 3px 0 #231e17;transition:transform .1s,box-shadow .1s}
+html[data-theme=writer] .mu.playing .mb{transform:translateY(2px);box-shadow:0 1px 0 #231e17}
+html[data-theme=writer] .eq i{background:#231e17}
+html[data-theme=writer] .mu.playing .cas::after{content:"now playing";position:absolute;right:-8px;bottom:-10px;padding:1px 8px;border:2px solid #8c2a1e;color:#8c2a1e;font:12px var(--mono);letter-spacing:.14em;text-transform:uppercase;transform:rotate(-7deg)}
+html[data-theme=writer] #npl{background:#f3ebd6;color:#231e17;border:1px solid #231e1766;border-radius:2px;box-shadow:0 2px 0 #b9a98266}
+/* the lost internet: a winamp-ish gadget with an LCD */
+html[data-theme=net] .mu{padding:6px;background:#d4d0c8;color:#000;border:2px outset #fff;box-shadow:1px 1px 0 #000;gap:8px}
+html[data-theme=net] .mu::before{content:"♪ now_playing.mp3";display:block;margin:-6px -6px 0;padding:2px 6px;background:linear-gradient(90deg,#000080,#1084d0);color:#fff;font:700 11px Verdana,sans-serif}
+html[data-theme=net] .cas{width:100%;aspect-ratio:auto;transform:none!important;filter:none;overflow:hidden;background:#000;border:2px inset #999;padding:2px 6px}
+html[data-theme=net] :is(.cs,.side){display:none}
+html[data-theme=net] .cap{position:static;display:block;width:auto;transform:none;white-space:nowrap;-webkit-line-clamp:unset;overflow:visible;font:22px/1.1 "VT323","Courier New",monospace;color:#3f3}
+html[data-theme=net] .mu.playing .cap{animation:munet 9s linear infinite}
+@keyframes munet{from{transform:translateX(60%)}to{transform:translateX(-100%)}}
+html[data-theme=net] .mu.no .cas{opacity:.7}
+html[data-theme=net] .mb,html[data-theme=net] .mu.no .mb{border-radius:0;background:#d4d0c8;color:#000;border:2px outset #fff;min-width:44px;height:30px}
+html[data-theme=net] .mu.playing .mb{border-style:inset}html[data-theme=net] .mu.playing .mb::after{display:none}
+html[data-theme=net] .eq{height:26px;padding:2px 4px;background:#000;border:2px inset #999}html[data-theme=net] .eq i{width:3px;background:#3f3}
+html[data-theme=net] .mt{padding:1px 5px;background:#000;color:#3f3;font:16px "VT323","Courier New",monospace;opacity:1}
+html[data-theme=net] .mseek::-webkit-slider-runnable-track{border-top:2px groove #888;opacity:1}
+html[data-theme=net] .mseek::-webkit-slider-thumb{width:12px;height:18px;margin-top:-10px;background:#d4d0c8;border:2px outset #fff;transform:none}
+html[data-theme=net] .mseek::-moz-range-thumb{width:8px;height:14px;background:#d4d0c8;border:2px outset #fff;border-radius:0}
+html[data-theme=net] #npl{background:#d4d0c8;color:#000;border:2px outset #fff;border-radius:0;box-shadow:1px 1px 0 #000}
+/* the film: a strip that runs through the projector while it plays */
+html[data-theme=film] .cas{width:100%;aspect-ratio:auto;transform:none!important;filter:none;overflow:hidden;background:#0e0d0c;padding:24px 12px;text-align:center}
+html[data-theme=film] .cas::before,html[data-theme=film] .cas::after{content:"";position:absolute;left:0;right:0;height:8px;background:repeating-linear-gradient(90deg,#f0e9d7 0 9px,transparent 9px 18px) 0 0/18px 8px}
+html[data-theme=film] .cas::before{top:6px}html[data-theme=film] .cas::after{bottom:6px}
+html[data-theme=film] .mu.playing .cas::before,html[data-theme=film] .mu.playing .cas::after{animation:mufilm .5s linear infinite}
+@keyframes mufilm{to{background-position:18px 0}}
+html[data-theme=film] :is(.cs,.side){display:none}
+html[data-theme=film] .cap{position:static;display:block;width:auto;transform:none;color:#f0e9d7;font:italic 700 22px/1.05 var(--serif)}
+html[data-theme=film] .mb{background:#c43a24;color:#f0e9d7;border-color:#0e0d0c;border-radius:0;font-family:var(--sans)}
+html[data-theme=film] .mu.no .mb{background:transparent;color:#0e0d0c}
+html[data-theme=film] .mu.playing .mb::after{border-color:#c43a24;border-radius:0}
+html[data-theme=film] .eq i{background:#c43a24}
+html[data-theme=film] .mseek::-webkit-slider-runnable-track{border-top:2px solid #0e0d0c;opacity:.8}
+html[data-theme=film] .mseek::-webkit-slider-thumb{background:#c43a24;border-color:#0e0d0c;transform:none}
+html[data-theme=film] #npl{background:#0e0d0c;color:#ebe4d3;border:1px solid #ebe4d355;border-radius:0;box-shadow:none}
+/* the bedroom: the record sleeve's disc comes out and spins in lamplight */
+html[data-theme=bed] :is(.cas,.cs){display:none}
+html[data-theme=bed] .mu{margin-top:18px;gap:10px}
+html[data-theme=bed] .mb{background:var(--ac);color:#1b130a;border-color:transparent;transition:box-shadow .4s}
+html[data-theme=bed] .mu.no .mb{background:transparent;color:var(--ac);border:1px dashed var(--ac)}
+html[data-theme=bed] .mu.playing .mb{box-shadow:0 0 26px 4px #f0b46c66}
+html[data-theme=bed] .eq i{width:3px;border-radius:3px;background:var(--ac)}
+html[data-theme=bed] .mseek::-webkit-slider-runnable-track{border-top:1px solid var(--ac);opacity:.55}
+html[data-theme=bed] .mseek::-webkit-slider-thumb{width:10px;height:10px;margin-top:-5px;border:0;border-radius:50%;transform:none;box-shadow:0 0 10px var(--ac)}
+html[data-theme=bed] .mt{font:italic 300 14px var(--serif)}
+html[data-theme=bed] .bx.sp{box-shadow:0 18px 40px #000a,0 0 44px #f0b46c26}
+html[data-theme=bed] .bx.sp::after{transform:translateX(24px);animation:mubed 3.2s linear infinite}
+@keyframes mubed{from{transform:translateX(24px) rotate(0)}to{transform:translateX(24px) rotate(360deg)}}
+html[data-theme=bed] #npl{background:#1f1b19;color:#e9e1d4;border-color:#ffffff22;border-radius:99px;box-shadow:0 6px 20px #0006,0 0 24px #f0b46c33}
+html[data-theme=bed] #npl button{border-radius:50%}
+
+/* remove-mp3 button */
+.mx{margin-left:auto;padding:3px 8px;background:none;border:1px dashed currentColor;color:inherit;font:10px var(--mono,monospace);letter-spacing:.05em;opacity:.6;cursor:pointer}
+.mx:hover{opacity:1}.mx.sure{background:#c0392b;border-color:#c0392b;color:#fff;opacity:1}
+.mu:not(.has) .mx{display:none}
+html[data-theme=net] .mx{border:2px outset #fff;border-radius:0;background:#d4d0c8;color:#000;opacity:1}
+
+/* film world: poster cards without a photo keep the sun at the top, so song cards start their text below it */
+html[data-theme=film] .bx:has(.mu):not(:has(.pi)){padding-top:186px}
+html[data-theme=film] .bx:has(.mu):not(:has(.pi))::after{top:62px;height:100px}
+html[data-theme=film] .cap{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:20px}

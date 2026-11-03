@@ -113,3 +113,17 @@ The door (first screen) now has its own look for each niche: **2am** = calm midn
 - **Loading:** each time you pick another niche (✦ niche), the site goes back to the opening and holds it for about 4.5 seconds with a small progress bar and a few quiet lines. [ enter ] fades in when it reaches 100%. The very first visit, or reloading the page yourself, does not show it. Picking the niche you are already on just closes the menu.
 - Change the time: `content/niches.js` → `door:{ loadMs:4500 }` (milliseconds). Change the words: `door:{ load:["…","…","…"] }` (the lines swap evenly while the bar fills). Logic is in `door.js`, looks are at the bottom of `door.css`.
 - With *reduce motion* turned on in the phone/computer, the loading is shortened to 1.5 s and does not animate.
+
+## Shared mp3s: upload in the website, everyone hears it (new)
+Before, an mp3 added with ✎ stayed in your own browser. Now (when shared mode / Supabase is on) it is uploaded to Supabase Storage and every visitor can play it.
+**One-time setup (5 minutes):**
+1. Shared entries already working? (key pasted in `supabase.js`, see "Shared entries" above.) If not, do that first.
+2. Supabase → Authentication → Sign In / Providers → turn **Allow anonymous sign-ins** ON.
+3. Supabase → SQL Editor → New query → paste everything from `supabase-storage.sql` → Run. It creates a public bucket called `songs` (15 MB per file, audio only) and the rules.
+4. Upload the site again (Netlify / Vercel).
+**Then, every time:** open the site → ✎ → *an mp3 for a song already here* (or the mp3 box when adding a song) → save. It says "everyone can hear it". Other visitors see the cassette with a play button within a few seconds of opening the room.
+- One shared mp3 per song title. If a song already has one, the website says so; only the person who uploaded it can remove it (**× mp3** on the cassette).
+- Only visitors who already typed their name can upload, and only mp3 / m4a / ogg / wav up to 15 MB (128 kbps ≈ 1 MB per minute).
+- If you are not online or not signed in, ✎ still saves the mp3 in your browser only, like before.
+- Order the site looks for a song: `audio:"…"` in `content/songs.js` → shared mp3 → this browser → `music/<song-title>.mp3`.
+- Use music you own or have the right to share. A public site with other people's songs can be taken down.

@@ -1,0 +1,25 @@
+/* PHOTO TIDY-UP: every photo gets the same frame, faces stay in the crop, long titles stay inside their card.
+   Worlds (◈) keep their own photo sizes — only the safe parts apply there. */
+
+/* all worlds */
+.pi{object-position:50% 22%}
+.pol,.bx,.cd,.win{min-width:0}
+.pol h3,.bx h3{overflow-wrap:anywhere;hyphens:auto}
+.exs{top:10px;right:44px}.xdel{top:10px;right:10px}
+.pol>.exs,.bx>.exs{box-shadow:0 0 0 2px var(--bg,#fff)}
+
+/* the usual look (no world on) */
+html:not([data-theme]) .pol .ph{height:auto;aspect-ratio:1/1;overflow:hidden;margin-bottom:14px}
+html:not([data-theme]) .pol .ph .pi{object-position:50% 22%}
+html:not([data-theme]) .pol{display:flex;flex-direction:column}
+html:not([data-theme]) .pol small{margin-top:auto;padding-top:10px}
+html:not([data-theme]) .bx .pi{height:auto;aspect-ratio:16/10}
+html:not([data-theme]) .bx h3{font-size:clamp(26px,2.3vw,36px);line-height:1}
+html:not([data-theme]) .hi .pi{width:84px;height:84px;border-radius:6px;border:2px solid currentColor}
+html:not([data-theme]) .pc .pi{width:min(100%,420px);height:auto;max-height:36vh;aspect-ratio:4/3;margin:0 auto 16px;border-radius:6px}
+.lv section>img.pi{object-position:50% 40%}
+
+@media(max-width:800px){
+ html:not([data-theme]) .pol .ph{aspect-ratio:4/3}
+}
+

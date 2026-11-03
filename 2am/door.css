@@ -1,0 +1,163 @@
+/* THE OPENING (door) — one look per niche. Worlds (◈) still override this: everything is scoped to "no world".
+   data-niche: 0 = 2am · 1 = video club · 2 = tracklist. Words/stickers live in content/niches.js → door:{…}. */
+
+/* ---------- shared skeleton ---------- */
+html[data-niche]:not([data-theme]) #door{--hd:"Dela Gothic One",Impact,sans-serif;--mo:"Space Mono",ui-monospace,monospace;--mk:"Permanent Marker","Caveat",cursive;
+ background:var(--dbg);color:var(--dink);font-family:var(--mo);isolation:isolate;overflow:hidden auto}
+html[data-niche]:not([data-theme]) #door::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;background:var(--dpat)}
+html[data-niche]:not([data-theme]) #door::after{content:"";position:fixed;inset:0;z-index:3;pointer-events:none;background:var(--grain);opacity:.12;mix-blend-mode:multiply}
+html[data-niche]:not([data-theme]) #door>div,html[data-niche]:not([data-theme]) #door .dtag{z-index:2}
+html[data-niche]:not([data-theme]) #door>div{max-width:100%;display:flex;flex-direction:column;align-items:center}
+html[data-niche]:not([data-theme]) #door h1{font:400 var(--dsz,clamp(48px,14vw,200px))/.95 var(--hd);letter-spacing:-.01em;transform:rotate(-3deg);color:var(--dt);-webkit-text-stroke:var(--dstroke,3px) var(--dline);paint-order:stroke fill;text-shadow:var(--dshadow);max-width:100%;overflow-wrap:anywhere}
+html[data-niche]:not([data-theme]) .d1{font:400 clamp(20px,2.5vw,34px)/1.15 var(--mk);margin-top:6vh;display:inline-block;padding:.22em .7em;background:var(--d1bg);color:var(--d1ink);border:3px solid var(--dline);box-shadow:5px 5px 0 var(--dline);transform:rotate(-2deg);max-width:92vw}
+html[data-niche]:not([data-theme]) .d2{font:700 clamp(13px,1.2vw,16px)/1.3 var(--mo);margin-top:2.4vh;color:var(--d2ink);letter-spacing:.02em}
+html[data-niche]:not([data-theme]) #enter{margin-top:4.5vh;background:var(--ebg);color:var(--eink);border:3px solid var(--dline);border-radius:99px;padding:14px 34px;font:700 clamp(15px,1.4vw,19px) var(--mo);letter-spacing:.02em;box-shadow:6px 6px 0 var(--esh);transition:transform .15s,box-shadow .15s}
+html[data-niche]:not([data-theme]) #enter:hover{letter-spacing:.02em;transform:translate(-3px,-3px) rotate(-1.5deg);box-shadow:9px 9px 0 var(--esh)}
+html[data-niche]:not([data-theme]) #enter:active{transform:translate(5px,5px);box-shadow:0 0 0 var(--esh)}
+html[data-niche]:not([data-theme]) #enter:focus-visible{outline:3px dashed var(--dline);outline-offset:5px}
+html[data-niche]:not([data-theme]) .dtag{font:400 12px/1.6 var(--mo);bottom:calc(8vh + 24px);max-width:min(58ch,86vw);padding:10px 16px;background:var(--tbg);color:var(--tink);border:2px dashed var(--dline);transform:rotate(-1deg);text-align:left;text-transform:none}
+html[data-niche]:not([data-theme]) .cu{color:inherit}
+
+/* name field (shared mode) */
+html[data-niche]:not([data-theme]) #dn label{font:700 13px var(--mo);color:var(--d2ink)}
+html[data-niche]:not([data-theme]) #dn input{background:#fff;color:#111;border:3px solid var(--dline);border-radius:12px;padding:10px 14px;box-shadow:4px 4px 0 var(--dline)}
+html[data-niche]:not([data-theme]) #dne{color:var(--dt);font-weight:700}
+
+/* decoration layer (hidden when a world is on) */
+html[data-theme] .dz{display:none}
+.dz{position:fixed;inset:0;z-index:1;pointer-events:none;overflow:hidden}
+.dz .mq{z-index:2;position:absolute;left:-3%;right:-3%;overflow:hidden;white-space:nowrap;padding:10px 0;font:700 13px/1 var(--mo,monospace);letter-spacing:.14em;text-transform:uppercase;border-block:3px solid var(--dline)}
+.dz .mq.t{top:calc(16px + env(safe-area-inset-top,0px));transform:rotate(-1.3deg);background:var(--m1);color:var(--m1i)}
+.dz .mq.b{bottom:calc(16px + env(safe-area-inset-bottom,0px));transform:rotate(1.3deg);background:var(--m2);color:var(--m2i)}
+.dz .dzt{display:inline-flex;animation:dzm 42s linear infinite}.dz .mq.b .dzt{animation-direction:reverse}
+.dz .dzt span{padding:0 18px}.dz .dzt span::after{content:"✦";margin-left:36px}
+@keyframes dzm{to{transform:translateX(-50%)}}
+.dz .sk{z-index:2;position:absolute;padding:7px 14px;font:700 clamp(11px,1.05vw,14px)/1.1 var(--mo,monospace);letter-spacing:.04em;text-transform:uppercase;background:var(--s1);color:var(--s1i);border:3px solid var(--dline);box-shadow:4px 4px 0 var(--dline);border-radius:var(--sr,8px);transform:rotate(var(--r,-6deg));animation:dzf 5s ease-in-out infinite}
+.dz .sk:nth-of-type(1){left:4.5%;top:21%;--r:-9deg}
+.dz .sk:nth-of-type(2){right:4.5%;top:24%;--r:7deg;background:var(--s2);color:var(--s2i);animation-delay:-1.5s}
+.dz .sk:nth-of-type(3){left:6%;bottom:24%;--r:6deg;background:var(--s3);color:var(--s3i);animation-delay:-3s}
+.dz .sk:nth-of-type(4){right:5.5%;bottom:25%;--r:-6deg;background:var(--s4);color:var(--s4i);animation-delay:-2.2s}
+@keyframes dzf{50%{transform:rotate(var(--r)) translateY(-6px)}}
+
+/* ---------- 0 · 2am: calm midnight (deep blue, soft glow, quiet details) ---------- */
+html[data-niche="0"]:not([data-theme]) #door{--hd:"Instrument Serif",Georgia,serif;--mk:"Instrument Serif",Georgia,serif;--dsz:clamp(72px,15vw,210px);
+ --dbg:linear-gradient(180deg,#0d1130 0%,#161a48 58%,#231d50 100%);--dink:#cfd3ff;--dline:#ffffff2e;--dt:#ece8ff;--dshadow:0 0 56px #8c9bff66;--dstroke:0px;--d1bg:transparent;--d1ink:#ece8ff;--d2ink:#a9afe0;--ebg:#e6e2ff;--eink:#14173d;--esh:#8c9bff44;--tbg:#ffffff0a;--tink:#a9afe0;
+ --m1:transparent;--m1i:#8f96d6;--m2:transparent;--m2i:#8f96d6;--s1:#ffffff0d;--s1i:#cfd3ff;--s2:#ffffff0d;--s2i:#cfd3ff;--s3:#ffffff0d;--s3i:#cfd3ff;--s4:#ffffff0d;--s4i:#cfd3ff;
+ --dpat:radial-gradient(circle at 80% 16%,#8c9bff3d,transparent 34%),radial-gradient(circle at 10% 92%,#b48cff26,transparent 42%)}
+html[data-niche="0"]:not([data-theme]) #door::after{opacity:.22;mix-blend-mode:overlay}
+html[data-niche="0"]:not([data-theme]) #door h1{transform:none;font-style:italic;letter-spacing:-.035em;line-height:.85}
+html[data-niche="0"]:not([data-theme]) .d1{font-style:italic;font-size:clamp(24px,3vw,40px);border:0;box-shadow:none;transform:none;padding:0;margin-top:5vh}
+html[data-niche="0"]:not([data-theme]) .d2{font-weight:400;letter-spacing:.04em}
+html[data-niche="0"]:not([data-theme]) #enter{border-color:transparent;font-weight:400;letter-spacing:.08em;box-shadow:0 0 34px var(--esh)}
+html[data-niche="0"]:not([data-theme]) #enter:hover{letter-spacing:.08em;transform:translateY(-2px);box-shadow:0 0 48px #8c9bffaa}
+html[data-niche="0"]:not([data-theme]) .dtag{transform:none;border:1px dashed #ffffff33}
+html[data-niche="0"]:not([data-theme]) .dz .mq{transform:none;background:transparent;color:#8f96d6;border-block:1px solid #ffffff1f;font-weight:400;letter-spacing:.32em;padding:12px 0;opacity:.85}
+html[data-niche="0"]:not([data-theme]) .dz .dzt{animation-duration:110s}
+html[data-niche="0"]:not([data-theme]) .dz .sk{background:#ffffff0d;color:#cfd3ff;border:1px solid #ffffff3d;box-shadow:none;border-radius:99px;font-weight:400;letter-spacing:.14em;padding:7px 16px;animation:none;--r:-2deg}
+html[data-niche="0"]:not([data-theme]) .dz .sk:nth-of-type(2){--r:2deg}
+html[data-niche="0"]:not([data-theme]) .dz [class^="st"]{position:absolute;color:#cfd3ff;font-style:normal;font-size:14px;animation:dztw 4.5s ease-in-out infinite}
+.dz .st0{left:15%;top:14%}.dz .st1{right:18%;top:16%;animation-delay:-1.2s!important;font-size:20px!important}.dz .st2{left:9%;top:52%;animation-delay:-2.4s!important}.dz .st3{right:8%;top:50%;animation-delay:-.6s!important}
+.dz .st4{left:34%;bottom:17%;animation-delay:-3s!important}.dz .st5{right:30%;bottom:19%;animation-delay:-1.8s!important;font-size:11px!important}.dz .st6{left:46%;top:12%;animation-delay:-3.6s!important;font-size:11px!important}
+@keyframes dztw{0%,100%{opacity:.2}50%{opacity:.95}}
+
+/* ---------- 1 · video club: calm — dusky plum, soft amber glow, faint tape lines ---------- */
+html[data-niche="1"]:not([data-theme]) #door{--hd:"Bungee",Impact,sans-serif;--mk:"Space Mono",ui-monospace,monospace;--dsz:clamp(40px,9vw,128px);
+ --dbg:linear-gradient(180deg,#1a1322 0%,#2a1a2b 60%,#3a2029 100%);--dink:#f3e9d2;--dline:#ffffff2e;--dt:#ffd98a;--dshadow:0 0 48px #ff8a5c55;--dstroke:0px;
+ --d1bg:transparent;--d1ink:#f3e9d2;--d2ink:#c9b9b0;--ebg:#ffd98a;--eink:#26141f;--esh:#ff8a5c44;--tbg:#ffffff0a;--tink:#c9b9b0;
+ --m1:transparent;--m1i:#b9a39f;--m2:transparent;--m2i:#b9a39f;--s1:#ffffff0d;--s1i:#f3e9d2;--s2:#ffffff0d;--s2i:#f3e9d2;--s3:#ffffff0d;--s3i:#f3e9d2;--s4:#ffffff0d;--s4i:#f3e9d2;
+ --dpat:radial-gradient(circle at 18% 88%,#ff8a5c2e,transparent 42%),radial-gradient(circle at 84% 14%,#ffd98a1f,transparent 38%)}
+html[data-niche="1"]:not([data-theme]) #door::after{opacity:.22;mix-blend-mode:multiply;background:repeating-linear-gradient(0deg,#0000 0 3px,#00000030 3px 4px)}
+html[data-niche="1"]:not([data-theme]) #door h1{transform:none;letter-spacing:.03em;line-height:1}
+html[data-niche="1"]:not([data-theme]) .d1{font-weight:400;font-size:clamp(15px,1.7vw,21px);letter-spacing:.06em;border:0;box-shadow:none;transform:none;padding:0;margin-top:5vh}
+html[data-niche="1"]:not([data-theme]) .d2{font-weight:400;letter-spacing:.05em}
+html[data-niche="1"]:not([data-theme]) #enter{border-color:transparent;font-weight:400;letter-spacing:.08em;box-shadow:0 0 34px var(--esh)}
+html[data-niche="1"]:not([data-theme]) #enter:hover{letter-spacing:.08em;transform:translateY(-2px);box-shadow:0 0 48px #ffd98a88}
+html[data-niche="1"]:not([data-theme]) .dtag{transform:none;border:1px dashed #ffffff33}
+html[data-niche="1"]:not([data-theme]) .dz .mq{transform:none;background:transparent;color:#b9a39f;border-block:1px solid #ffffff1f;font-weight:400;letter-spacing:.32em;padding:12px 0;opacity:.8}
+html[data-niche="1"]:not([data-theme]) .dz .dzt{animation-duration:120s}
+html[data-niche="1"]:not([data-theme]) .dz .sk{background:#ffffff0d;color:#f3e9d2;border:1px solid #ffffff3d;box-shadow:none;border-radius:99px;font-weight:400;letter-spacing:.14em;padding:7px 16px;animation:none;--r:-2deg}
+html[data-niche="1"]:not([data-theme]) .dz .sk:nth-of-type(2){--r:2deg}
+html[data-niche="1"]:not([data-theme]) .dz .sk.osd{background:none;border:0;border-radius:0;padding:0;color:#f3e9d2;text-shadow:0 0 16px #ff8a5c66;font:400 clamp(15px,1.7vw,24px)/1 "Space Mono",monospace;letter-spacing:.1em;transform:none}
+html[data-niche="1"]:not([data-theme]) .dz .sk.osd:nth-of-type(1){left:5%;top:19%}
+html[data-niche="1"]:not([data-theme]) .dz .sk.osd:nth-of-type(2){left:auto;right:5%;top:19%}
+html[data-niche="1"]:not([data-theme]) .dz .sk:nth-of-type(3){left:5%;bottom:24%}
+html[data-niche="1"]:not([data-theme]) .dz .sk:nth-of-type(4){right:5%;bottom:25%}
+.dz .tr{position:absolute;left:0;right:0;height:44px;top:-80px;background:linear-gradient(#0000,#ffffff12 50%,#0000);opacity:.7;animation:dztr 18s linear infinite}
+@keyframes dztr{to{top:110%}}
+
+/* ---------- 2 · tracklist: calm — quiet paper, soft ink, slow little equalizer ---------- */
+html[data-niche="2"]:not([data-theme]) #door{--hd:"Anton",Impact,sans-serif;--mk:"Instrument Serif",Georgia,serif;--dbg:#ece5d6;--dink:#2a261f;--dline:#2a261f33;--dt:#2a261f;--dstroke:0px;--dshadow:none;
+ --d1bg:transparent;--d1ink:#2a261f;--d2ink:#5b5448;--ebg:#2a261f;--eink:#ece5d6;--esh:#2a261f26;--tbg:#ffffff66;--tink:#5b5448;
+ --m1:transparent;--m1i:#7a705f;--m2:transparent;--m2i:#7a705f;--s1:transparent;--s1i:#2a261f;--s2:transparent;--s2i:#2a261f;--s3:transparent;--s3i:#2a261f;--s4:transparent;--s4i:#2a261f;
+ --dpat:radial-gradient(#2a261f14 1px,transparent 1.5px) 0 0/9px 9px}
+html[data-niche="2"]:not([data-theme]) #door::after{opacity:.16}
+html[data-niche="2"]:not([data-theme]) #door h1{transform:none;-webkit-text-stroke:0;text-shadow:none;display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:0;line-height:1;letter-spacing:.06em;font-size:clamp(44px,10vw,150px)}
+/* the ransom-note letters stay (door.js builds them) but sit flat and in one colour */
+html[data-niche="2"]:not([data-theme]) .dzl{background:none;border:0;box-shadow:none;transform:none;color:inherit;padding:0 .02em}
+.dzl{font-style:normal;display:inline-block}
+.dzs{display:inline-block;width:.3em}
+html[data-niche="2"]:not([data-theme]) .d1{font-style:italic;font-weight:400;font-size:clamp(22px,2.6vw,34px);border:0;box-shadow:none;transform:none;padding:0;margin-top:5vh}
+html[data-niche="2"]:not([data-theme]) .d2{font-weight:400;letter-spacing:.05em}
+html[data-niche="2"]:not([data-theme]) #enter{border-color:transparent;font-weight:400;letter-spacing:.08em;box-shadow:0 8px 26px var(--esh)}
+html[data-niche="2"]:not([data-theme]) #enter:hover{letter-spacing:.08em;transform:translateY(-2px);box-shadow:0 12px 34px #2a261f3d}
+html[data-niche="2"]:not([data-theme]) .dtag{transform:none;border:1px dashed #2a261f33}
+html[data-niche="2"]:not([data-theme]) .dz .mq{transform:none;background:transparent;color:#7a705f;border-block:1px solid #2a261f26;font-weight:400;letter-spacing:.32em;padding:12px 0;opacity:.85}
+html[data-niche="2"]:not([data-theme]) .dz .dzt{animation-duration:120s}
+html[data-niche="2"]:not([data-theme]) .dz .sk{font-family:var(--mo,monospace);background:transparent;color:#2a261f;border:1px solid #2a261f40;box-shadow:none;border-radius:99px;font-weight:400;letter-spacing:.14em;padding:7px 16px;animation:none;--r:-2deg}
+html[data-niche="2"]:not([data-theme]) .dz .sk:nth-of-type(1){left:5%;top:15%}
+html[data-niche="2"]:not([data-theme]) .dz .sk:nth-of-type(2){right:5%;top:15%;--r:2deg}
+html[data-niche="2"]:not([data-theme]) .dz .sk:nth-of-type(3){left:4%;bottom:27%}
+.dz .ht{position:absolute;border-radius:50%;background:radial-gradient(circle,var(--hc) 2.4px,transparent 2.9px) 0 0/10px 10px;opacity:.28}
+.dz .ht.a{--hc:#c9673b;width:44vmin;height:44vmin;right:-8vmin;top:6vmin}
+.dz .ht.b{--hc:#4a5fc1;width:34vmin;height:34vmin;left:-8vmin;bottom:2vmin}
+.dz .dzeq{position:absolute;right:9%;bottom:calc(11vh + 16px);display:flex;align-items:flex-end;gap:6px;height:56px;opacity:.55}
+.dz .dzeq i{display:block;width:8px;border-radius:2px 2px 0 0;background:#2a261f;height:30%;animation:dzeq 3.6s ease-in-out infinite}
+.dz .dzeq i:nth-child(2){animation-delay:-.6s}.dz .dzeq i:nth-child(3){animation-delay:-1.3s}.dz .dzeq i:nth-child(4){animation-delay:-2s}.dz .dzeq i:nth-child(5){animation-delay:-.3s}.dz .dzeq i:nth-child(6){animation-delay:-1.8s}.dz .dzeq i:nth-child(7){animation-delay:-1s}
+@keyframes dzeq{0%,100%{height:26%}50%{height:76%}}
+
+/* ---------- small screens ---------- */
+@media(max-width:800px){
+ html[data-niche]:not([data-theme]) #door{padding:78px 16px 90px}
+ html[data-niche="0"]:not([data-theme]) #door{--dsz:clamp(72px,26vw,200px)}
+ html[data-niche="2"]:not([data-theme]) #door h1{font-size:9.4vw;flex-wrap:nowrap}
+ html[data-niche="2"]:not([data-theme]) .dz .sk:nth-of-type(2){right:3%;top:11%}
+ html[data-niche="2"]:not([data-theme]) .dz .sk:nth-of-type(3){left:3%;bottom:11%}
+ html[data-niche="2"]:not([data-theme]) .dz .sk:nth-of-type(4){right:3%;bottom:11%}
+ html[data-niche]:not([data-theme]) .dtag{position:static;margin-top:5vh;bottom:auto}
+ html[data-niche]:not([data-theme]) .d1{margin-top:4vh}
+ .dz .mq{font-size:11px;padding:8px 0}
+ .dz .sk{font-size:10px;padding:5px 10px}
+ .dz .sk:nth-of-type(1){left:3%;top:15%}.dz .sk:nth-of-type(2){right:3%;top:15%}
+ .dz .sk:nth-of-type(3){left:3%;bottom:11%}.dz .sk:nth-of-type(4){right:3%;bottom:11%}
+ html[data-niche="1"]:not([data-theme]) .dz .sk.osd{font-size:14px}
+ html[data-niche="1"]:not([data-theme]) .dz .sk.osd:nth-of-type(1){left:4%;top:13%}html[data-niche="1"]:not([data-theme]) .dz .sk.osd:nth-of-type(2){right:4%;top:13%}
+ html[data-niche="1"]:not([data-theme]) .dz .sk:nth-of-type(3){left:3%;bottom:11%}html[data-niche="1"]:not([data-theme]) .dz .sk:nth-of-type(4){right:3%;bottom:11%}
+ html[data-niche="2"]:not([data-theme]) .dz .sk:nth-of-type(1){left:3%;top:11%}
+ .dz .dzeq{display:none}
+ .dz .st2,.dz .st3,.dz .st6{display:none}
+}
+@media(max-height:740px) and (min-width:801px){
+ html[data-niche]:not([data-theme]) #door{--dsz:clamp(64px,min(15vw,21vh),210px)}
+ html[data-niche="1"]:not([data-theme]) #door{--dsz:clamp(40px,min(11vw,17vh),160px)}
+ html[data-niche="2"]:not([data-theme]) #door h1{font-size:clamp(40px,min(12vw,19vh),170px)}
+ html[data-niche]:not([data-theme]) .d1{margin-top:3vh}html[data-niche]:not([data-theme]) #enter{margin-top:3vh}
+ html[data-niche]:not([data-theme]) .dtag{max-width:min(92ch,86vw);bottom:calc(5vh + 52px);font-size:11px;padding:8px 14px}
+}
+@media(max-height:540px) and (min-width:801px){html[data-niche]:not([data-theme]) .dtag{display:none}}
+@media(prefers-reduced-motion:reduce){.dz *,.dz .dzt{animation:none!important}}
+
+/* ---------- loading when you switch niche ----------
+   door.js adds class "dl" to #door for a few seconds (only right after a niche switch), swaps [ enter ] for a quiet progress bar, then fades the button in. */
+.dload{display:none}
+#door.dl .dload{display:flex;flex-direction:column;align-items:center;gap:14px;margin-top:4.5vh;min-height:58px;justify-content:center;font:400 13px var(--mo,"Space Mono",monospace);letter-spacing:.14em;color:var(--d2ink,currentColor)}
+#door.dl #enter,#door.dl #dn{display:none!important}
+.dload .dlt{opacity:.9;transition:opacity .5s}
+.dload .dlb{width:min(260px,62vw);height:2px;border-radius:2px;background:var(--dline,#ffffff33);overflow:hidden}
+.dload .dlb i{display:block;height:100%;width:0;background:var(--dt,currentColor);opacity:.8}
+.dload .dlp{font-variant-numeric:tabular-nums;font-size:11px;opacity:.7}
+html[data-niche]:not([data-theme]) #door.dl>div h1{animation:dlin 1.8s ease both}
+html[data-niche]:not([data-theme]) #door.dl .dz{animation:dlfade 2.4s ease both}
+html[data-niche]:not([data-theme]) #door.dr #enter,html[data-niche]:not([data-theme]) #door.dr #dn{animation:dlin 1.4s ease both}
+@keyframes dlin{from{opacity:0;transform:translateY(8px)}to{opacity:1}}
+@keyframes dlfade{from{opacity:0}to{opacity:1}}
+@media(prefers-reduced-motion:reduce){#door.dl *,#door.dr *{animation:none!important}}

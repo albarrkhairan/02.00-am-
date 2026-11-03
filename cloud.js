@@ -108,6 +108,44 @@ function showDoor(){
 }
 const nudge = msg => { $("#dne").textContent = msg; const i = $("#dni"); i.classList.remove("shake"); void i.offsetWidth; i.classList.add("shake"); i.focus(); };
 
+// ---- shared mp3s: Supabase Storage bucket "songs" (public to listen, signed-in to upload) --------------
+// files are named <song-title-slug>.<ext> (holocene.mp3). One mp3 per song; only who uploaded it can delete it (storage policy, see supabase-storage.sql).
+const BUCKET = "songs", MIME = { mp3:"audio/mpeg", m4a:"audio/mp4", ogg:"audio/ogg", wav:"audio/wav" }, MAXMB = 15;
+const AU = { map:{} };                                              // slug → { file, url }
+async function loadAudio(){
+  const r = await sb.storage.from(BUCKET).list("",{ limit:1000 });
+  if (r.error) throw r.error;
+  AU.map = {};
+  (r.data||[]).forEach(o => {
+    const m = /^([a-z0-9-]+)\.(mp3|m4a|ogg|wav)$/.exec(o.name||""); if (!m) return;
+    const v = o.updated_at ? Date.parse(o.updated_at) : 0;
+    AU.map[m[1]] = { file:o.name, url:sb.storage.from(BUCKET).getPublicUrl(o.name).data.publicUrl + (v ? "?v="+v : "") };
+  });
+}
+const audioUrl = sl => (AU.map[sl]||{}).url || null;
+async function audioPut(name,file){
+  if (!ready()) throw new Error("not signed in");
+  const sl = window.slug(name); if (!sl) throw new Error("that song has no title");
+  if (AU.map[sl]) throw new Error("this song already has a shared mp3 — only the person who added it can remove it");
+  let ext = (String(file.name||"").split(".").pop()||"").toLowerCase();
+  if (!MIME[ext]) ext = /mpeg|mp3/.test(file.type)?"mp3":/mp4|m4a|aac/.test(file.type)?"m4a":/ogg/.test(file.type)?"ogg":/wav/.test(file.type)?"wav":"";
+  if (!ext) throw new Error("use an mp3, m4a, ogg or wav file");
+  if (file.size > MAXMB*1e6) throw new Error("that file is over "+MAXMB+" MB — export it smaller (128 kbps is about 1 MB per minute)");
+  const f = sl+"."+ext;
+  const r = await sb.storage.from(BUCKET).upload(f, file, { contentType:MIME[ext], cacheControl:"31536000", upsert:false });
+  if (r.error) throw new Error(/already exists|duplicate/i.test(r.error.message||"") ? "this song already has a shared mp3" : /not found/i.test(r.error.message||"") ? "the “songs” bucket doesn’t exist yet — run supabase-storage.sql" : r.error.message);
+  AU.map[sl] = { file:f, url:sb.storage.from(BUCKET).getPublicUrl(f).data.publicUrl + "?v=" + Date.now() };
+  return AU.map[sl].url;
+}
+async function audioDel(name){
+  if (!ready()) throw new Error("not signed in");
+  const sl = window.slug(name), a = AU.map[sl]; if (!a) return false;
+  const r = await sb.storage.from(BUCKET).remove([a.file]);
+  if (r.error) throw r.error;
+  if (!r.data || !r.data.length) throw new Error("not allowed — that mp3 was added by someone else");   // RLS blocked it
+  delete AU.map[sl]; return true;
+}
+
 // ---- start ---------------------------------------------------------------
 async function init(){
   if (!window.sb) return console.warn("[cloud] window.sb missing — running locally.");
@@ -118,6 +156,7 @@ async function init(){
     const p = await sb.from("profiles").select("display_name").eq("id",st.user.id).maybeSingle();
     st.name = (p.data && p.data.display_name) || "anonymous";
     await load(); st.ok = true; changed(); showDoor();
+    loadAudio().then(changed).catch(e => console.warn("[cloud] shared mp3s are off (run supabase-storage.sql?):", e.message||e));   // never blocks the site
     let skipped = false; try { skipped = !!sessionStorage.getItem("tiu217skipname") } catch(e){}
     if (st.name==="anonymous" && !skipped && document.body.dataset.room!=="door") askName("room");  // landed inside a room, not at the door
   } catch(err) { console.warn("[cloud] offline mode:", err.message||err); }
@@ -139,5 +178,5 @@ document.addEventListener("click", async ev => {
 }, true);
 
 const who = () => esc(st.name);                                      // safe-to-print name
-window.Cloud = { who, ready, items, mine, current, add, remove, setCurrent, askName, badge, needName };
+window.Cloud = { who, ready, items, mine, current, add, remove, setCurrent, askName, badge, needName, audioUrl, audioPut, audioDel };
 })();
