@@ -1,0 +1,43 @@
+// NICHES: each one swaps the words, room names and sample content (and picks a skin).
+// Copy a block, change the words, save, refresh. rooms: key:[menu name, big heading, small line]
+// skin = number of the skin in content/skins.js (0 = first). kinds renames BOOK / FILM / SONG labels.
+// The sample items below are real titles and artists, so you can see what goes where. Replace them with yours.
+C.niches = [
+ {name:"2am (original)", door:{ticker:"2:17 am|still awake|the house is quiet|nobody’s watching|one more scroll", ticker2:"quiet hours|lights off|can’t sleep|2:17 am", stickers:["still awake","quiet hours","2:17 am"], enter:"enter", fx:"stars", load:["dimming the lights…","putting the kettle on…","settling in…"]}},
+ {name:"watchlist, vhs rental", brand:"VIDEO CLUB", skin:5, title:"VIDEO CLUB", d1:"the store is closed.", d2:"but the tapes are still rewinding.",
+  tag:"a little corner for films with scores, characters i’d follow anywhere, and what to watch depending on your mood.",
+  door:{ticker:"be kind, rewind|new releases|two night rental|late fee: one more episode|now showing", ticker2:"staff picks|now showing|rewind before returning|open late", stickers:["osd:PLAY ▶","osd:SP 0:02:17","new release","staff pick"], enter:"▶ play", fx:"vhs", load:["rewinding the tape…","dusting off the shelves…","dimming the store lights…"]},
+  bar:"rating:", kinds:{BOOK:"SERIES",FILM:"MOVIE",SONG:"SOUNDTRACK"},
+  rooms:{thoughts:["reviews","hot takes","short reviews written right after the credits"],people:["characters","favorite characters","people from the screen i’d follow anywhere."],brain:["scores","films and series, with scores"],lives:["worlds","worlds i’d move to"],hours:["showtimes","showtimes","pick a time. each one is a double feature."],feelings:["mood picker","what’s your mood tonight?"],questions:["plot holes","things i still don’t understand"],now:["now playing","currently watching"]},
+  content:{
+   thoughts:[{text:"i rewatch Spirited Away whenever i miss being a kid.",time:"11:52 PM",size:"l"},{text:"every Christopher Nolan film needs two viewings and one nap.",time:"12:20 AM",size:"m"}],
+   characters:[{name:"Tony Stark",from:"Iron Man",cat:"heroes i’d follow",note:"would make me a gadget and a sarcastic comment in the same breath.",tags:["genius","sarcastic"]},{name:"Loki",from:"Thor",cat:"villains i defend",note:"honestly just wanted attention. i get it.",tags:["chaotic","misunderstood"]},{name:"Hermione Granger",from:"Harry Potter",cat:"heroes i’d follow",note:"she’d have the study schedule ready and we’d actually pass.",tags:["smart","loyal"]}],
+   books:[{title:"Breaking Bad",note:"the best slow burn i’ve ever watched.",score:97,micro:"no notes",saved:"couldn’t stop after episode 3",hour:"23:00"},{title:"Stranger Things",note:"nostalgia and monsters, a perfect mix.",score:88,saved:"best binge with friends",hour:"23:00"}],
+   films:[{title:"Parasite",note:"i went in blind and came out silent.",score:96,saved:"changed how i see movies",hour:"21:00"},{title:"Spirited Away",note:"comfort film. i find something new every time.",score:98,saved:"my forever favorite",hour:"19:00"},{title:"Interstellar",note:"a space movie that somehow made me call my dad.",score:94,saved:"watched it three times",hour:"21:00"}],
+   songs:[{title:"Time (Inception) — Hans Zimmer",note:"i study to this and feel like the main character.",score:95,saved:"best film score for focus",hour:"21:00"}],
+   fictionalLives:[{id:"001",place:"Hogwarts, first year",lines:["a letter that arrives by owl.","a staircase that changes its mind.","dinner appears out of nowhere."],basedOn:"Harry Potter",g1:"#2a1b4a",g2:"#ff2e63"}],
+   quotes:[{text:"one more episode. promise.",by:"me, every night",hour:"23:00"}],
+   hours:[{time:"19:00",label:"popcorn hour"},{time:"21:00",label:"main feature"},{time:"23:00",label:"one more episode"}],
+   feelings:[{label:"i want to cry",read:"the novel behind a film that made you cry",watch:"Your Name, or Interstellar",listen:"the Interstellar score",meet:"Hermione Granger",think:"why do sad endings feel so good?"},{label:"i want to laugh",read:"nothing. just watch.",watch:"The Grand Budapest Hotel",listen:"the Ratatouille soundtrack",meet:"Loki",think:"is a comedy ever really just a comedy?"}],
+   questions:[{text:"why didn’t the eagles just fly the ring to Mordor?",status:"probably never finding out"}],
+   current:[{icon:"📼",label:"watching",value:"Stranger Things"},{icon:"⭐",label:"last 100%",value:"Spirited Away"},{icon:"🍿",label:"next up",value:"Oppenheimer"}]}},
+ {name:"music, dial-up diary", brand:"TRACKLIST", skin:1, title:"TRACKLIST", d1:"headphones on.", d2:"press play on something",
+  tag:"a little corner for songs on repeat, albums that stayed, concerts i can’t forget, and playlists for every hour of the day.",
+  door:{ticker:"now playing|side a|on repeat|volume up|headphones on|encore", ticker2:"liner notes|track 01|play it louder|queue it up", stickers:["side a ▶","vol. 02:17","on repeat ↻","track 01"], enter:"press play ▶", ransom:true, fx:"eq", load:["cueing the record…","turning the volume down low…","finding track 01…"]},
+  bar:"replays:", kinds:{BOOK:"ALBUM",FILM:"CONCERT",SONG:"SONG"},
+  rooms:{thoughts:["liner notes","liner notes","things i think while a song plays"],people:["artists","artists on repeat","the voices i keep coming back to."],brain:["records","songs, albums and concerts"],lives:["scenes","music scenes i’d live in"],hours:["playlists","playlist by hour","pick an hour. each one is a playlist."],feelings:["mood mix","what do you need to hear?"],questions:["lyrics","things i still wonder about music"],now:["now playing","currently on repeat"]},
+  content:{
+   thoughts:[{text:"OK Computer sounds different every time i’m sad.",time:"6:45 PM",size:"l"},{text:"nothing beats singing Queen in the shower.",time:"11:10 PM",size:"m"}],
+   characters:[{name:"Tulus",from:"Indonesia · pop",cat:"on repeat",note:"his voice makes a sad song feel like a hug.",tags:["voice","comfort"]},{name:"Billie Eilish",from:"USA · alt pop",cat:"on repeat",note:"whisper-singing that somehow fills the room.",tags:["moody","2am"]},{name:"Sheila on 7",from:"Indonesia · pop rock",cat:"nostalgia",note:"every song takes me back to school.",tags:["nostalgia","sing-along"]}],
+   books:[{title:"OK Computer — Radiohead",note:"strange, cold, and somehow comforting.",score:97,micro:"no skips",saved:"the album that taught me to listen",hour:"22:00"},{title:"Menari dengan Bayangan — Hindia",note:"honest songs about growing up. i feel seen.",score:95,saved:"my quarter-life album",hour:"22:00"}],
+   films:[{title:"Coldplay live in Jakarta",note:"wristbands glowing, whole stadium singing.",score:93,saved:"still gives me goosebumps",hour:"20:00"}],
+   songs:[{title:"Bohemian Rhapsody — Queen",note:"six minutes that never feel long.",score:98,saved:"the perfect song",hour:"22:00"},{title:"Pamit — Tulus",note:"a goodbye song that’s kind and sad together.",score:92,saved:"for quiet nights",hour:"22:00"},{title:"Walking on Sunshine — Katrina and the Waves",note:"instant good mood on the commute.",score:85,saved:"morning energy",hour:"07:00"},{title:"Experience — Ludovico Einaudi",note:"piano that makes homework feel cinematic.",score:90,saved:"focus mode",hour:"15:00"}],
+   fictionalLives:[{id:"001",place:"a small gig in Jakarta, 2004",lines:["a cracked amp.","forty people, one song.","ears ringing all the way home."],basedOn:"every small gig",g1:"#0b140b",g2:"#ffb000"}],
+   quotes:[{text:"play it again, but louder.",by:"me, in the car",hour:"07:00"}],
+   hours:[{time:"07:00",label:"commute mix"},{time:"15:00",label:"focus mix"},{time:"20:00",label:"concert hour"},{time:"22:00",label:"quiet hours"}],
+   feelings:[{label:"i need energy",read:"the liner notes of an album you love",watch:"a Coldplay live clip",listen:"Walking on Sunshine — Katrina and the Waves",meet:"Billie Eilish",think:"why does tempo change mood so fast?"},{label:"i feel quiet",read:"nothing. eyes closed.",watch:"nothing. just listen.",listen:"Experience — Ludovico Einaudi",meet:"Tulus",think:"which song is yours?"}],
+   questions:[{text:"why does Bohemian Rhapsody never feel too long?",status:"still thinking about this"}],
+   current:[{icon:"🎧",label:"on repeat",value:"Pamit — Tulus"},{icon:"💿",label:"album",value:"OK Computer — Radiohead"},{icon:"🎟️",label:"next concert",value:"not booked yet"}]}}
+];
+// applies the chosen niche's content before the editor starts (don't edit)
+(()=>{let i=0;try{i=+localStorage.getItem("tiu217niche")||0}catch(e){}const n=C.niches[i];if(i&&n&&n.content)Object.assign(C,n.content)})();
