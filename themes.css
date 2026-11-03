@@ -90,70 +90,82 @@ cursor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='
 #mb2{animation:none}.disc{background:var(--ink);color:var(--bg);border-radius:2px}
 }
 
-/* ============ 2 · THE LOST INTERNET — a homepage, 2002 ============ */
+/* ============ 2 · THE LOST COMPUTER — a desktop, 2001: sky wallpaper, icons, XP windows, taskbar ============ */
 html[data-theme=net]{
---serif:"Times New Roman",Times,serif;--sans:Verdana,Tahoma,sans-serif;--mono:"Courier New",Courier,monospace;--hand:"Comic Sans MS","Chalkboard SE",cursive;
---card:#d4d0c8;--ct:#000;--ln:#fff #404040 #404040 #fff;--bw:2px;--rad:0;--shd:1px 1px 0 #000;
+--serif:"Pixelify Sans","Courier New",monospace;--sans:Tahoma,Verdana,sans-serif;--mono:Tahoma,Verdana,sans-serif;--hand:Caveat,"Comic Sans MS",cursive;
+--card:linear-gradient(#fff,#ecebe5 85%,#d6d0c3);--ct:#000;--ln:#003c74;--bw:1px;--rad:3px;--shd:0 1px 2px #0005;--xb:linear-gradient(#3d8bf5,#0a56dc 12%,#0a56dc 80%,#0842c4);
 cursor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='20' shape-rendering='crispEdges'%3E%3Cpath d='M1 1h2v2h2v2h2v2h2v2h2v2H8v2h2v4H8v-3H6v3H4v-4H2v-3H1z' fill='%23fff' stroke='%23000'/%3E%3C/svg%3E") 1 1,auto;
-& body,& body[data-room]{--bg:#0a0a4a;--ink:#e9e9ff;--ac:#0000cc;--ac2:#cc0066;--mu:#555;--hf:var(--serif);--hw:700;--gr:0;font:14px/1.55 var(--sans);background:#0a0a4a radial-gradient(1px 1px at 12px 20px,#fff,transparent),radial-gradient(1px 1px at 70px 90px,#9cf,transparent),radial-gradient(2px 2px at 100px 40px,#fff9,transparent);background-size:120px 120px}
+& body,& body[data-room]{--bg:#1d4fc4;--ink:#fff;--ac:#ffe97a;--ac2:#d9502a;--mu:#5b6b9a;--hf:var(--serif);--hw:700;--gr:0;font:13px/1.55 var(--sans);background:radial-gradient(120% 52% at 14% 118%,#2e7d12 0,#58a528 52%,#8fd14f 60%,#0000 61%),radial-gradient(90% 38% at 88% 122%,#3a8a17 0,#6fba3c 56%,#0000 57%),radial-gradient(ellipse 10% 6% at 19% 24%,#fff 0,#fffe 42%,#fff0 74%),radial-gradient(ellipse 8% 5% at 25% 21%,#fff 0,#fffe 42%,#fff0 74%),radial-gradient(ellipse 12% 5% at 29% 27%,#fff 0,#fffe 42%,#fff0 74%),radial-gradient(ellipse 11% 6% at 72% 13%,#fff 0,#fffe 42%,#fff0 74%),radial-gradient(ellipse 8% 5% at 78% 10%,#fff 0,#fffe 42%,#fff0 74%),radial-gradient(ellipse 9% 4% at 66% 16%,#fff 0,#fffe 42%,#fff0 74%),radial-gradient(ellipse 9% 5% at 56% 40%,#fff 0,#fffe 42%,#fff0 74%),radial-gradient(ellipse 10% 4% at 62% 43%,#fff 0,#fffe 42%,#fff0 74%),radial-gradient(ellipse 8% 4% at 9% 50%,#fff 0,#fffe 42%,#fff0 74%),linear-gradient(#1f6fe0 0,#5aa6f5 42%,#cfe8ff 74%);background-attachment:fixed;background-size:100% 100%;background-repeat:no-repeat}
 & body::after{display:none}
-#room{--bg:#fffff4;--ink:#14143c;background:#fffff4;color:var(--ink);margin:20px 20px 20px 230px;border:3px ridge #9999cc;min-height:calc(100vh - 40px);transition:opacity .15s steps(3)}
-.rv{transform:none;transition:opacity .2s steps(3)}
-.h{font:700 clamp(28px,4vw,48px)/1.1 var(--serif);letter-spacing:0;color:#000080;text-shadow:1px 1px 0 #ccf}
-.h::after{content:"";display:block;height:3px;margin-top:8px;background:linear-gradient(90deg,#00f,#f0f,#f00,#fa0,#0c0)}
-.m{font:11px/1.5 var(--mono);letter-spacing:0;text-transform:none}.sub{font:italic 16px var(--serif);max-width:60ch}.hand{font:700 14px var(--hand)}
-a:hover{background:#ff0;color:#000}
-#os{--bg:#d4d0c8;--ink:#000;--ac:#00c;background:#d4d0c8;color:#000;border-right:2px outset #fff}
-#os .br{font:700 22px var(--serif);color:#000080}
-#os a{font:12px var(--sans);color:#00e;text-decoration:underline!important;opacity:1}
-#os a.on{background:#000080;color:#fff;box-shadow:none}
-#os button{font-family:var(--sans)}
-.fxv{display:block;margin:12px -4px 0;padding:6px;background:#000;color:#0f0;font:12px var(--mono);text-align:center;border:2px inset #888}
-.fxv b{display:block;font:26px/1 "VT323",var(--mono);letter-spacing:.14em}.fxv small{display:block;color:#8f8;font-size:10px;margin-top:4px}
-#door{background:#00003a radial-gradient(1px 1px at 12px 20px,#fff,transparent),radial-gradient(1px 1px at 70px 90px,#9cf,transparent);background-size:120px 120px;color:#fff}
-#door h1{font:700 clamp(60px,15vw,170px)/.9 var(--serif);letter-spacing:0;color:#ff0;text-shadow:4px 4px 0 #c0c}
-.d1{font:italic 24px var(--serif)}.d2{font:14px var(--mono);color:#0f0}.dtag{font-family:var(--sans);color:#9cf}
-#enter{background:#d4d0c8;color:#000;border:2px outset #fff;padding:6px 20px;font:700 14px var(--sans)}#enter:hover{letter-spacing:0;border-style:inset}
-/* thoughts → forum posts */
-.nts{gap:14px;margin-top:2vh;counter-reset:p}
-.nt{font:14px/1.6 var(--sans);max-width:62ch;margin-left:0;background:#fff;border:2px outset #ddd;padding:10px 12px}
-.nt b{background:linear-gradient(90deg,#000080,#1084d0);color:#fff;margin:-10px -12px 8px;padding:2px 8px;font:700 11px var(--mono);counter-increment:p}
-.nt b::after{content:" · post #" counter(p)}
-/* people → profile pages */
-.pol{background:#fff;border:2px outset #ddd;box-shadow:none;padding:8px;transform:none}
-.pol .ph{height:140px;border:2px inset #999;filter:none}
-.pol h3{font:700 16px var(--sans);color:#00e;text-decoration:underline}.pol .nn{font:700 13px/1.4 var(--hand);color:#333}
-.tg{border-radius:0;background:#000080;color:#fff;border:1px solid #fff;font:10px var(--mono)}
-.pol small{font:11px var(--mono);color:#080;transform:none}.pol:hover{outline:2px dotted #f0f}
-/* brain → directory entries */
-.bx{background:#fff;border:2px outset #ddd;box-shadow:none;transform:none;padding:14px}
-.bx h3{font:700 19px var(--serif);text-transform:none;letter-spacing:0;color:#00e;text-decoration:underline}
-.st{border-radius:0;background:#f00;color:#ff0;font:700 10px var(--mono);transform:none;animation:nb 1s steps(2) infinite}
-@keyframes nb{50%{opacity:.25}}
-.bar b{color:#080;font-size:13px}.bx .nn{font:13px/1.5 var(--sans)}.mc{font:700 14px var(--hand);color:#c06}.bx .pi{border-bottom:2px inset #999}
-/* lives → full-page splash */
-.lv{height:calc(100vh - 44px)}.lv section::before{inset:0;width:auto;height:auto;right:auto;top:auto;border-radius:0;filter:none;background:conic-gradient(#0003 25%,transparent 0 50%,#0003 0 75%,transparent 0) 0 0/4px 4px}
-.lv .h{font:italic 700 clamp(40px,7vw,90px)/1 var(--serif);text-shadow:3px 3px 0 #000}.ls{font:italic 22px/1.4 var(--serif);text-shadow:1px 1px 0 #000}
-.lvb button{border-radius:0;border:2px outset #fff;background:#d4d0c8;color:#000}
-/* hours → link directory */
-.hrs{gap:2px}.hr{font:14px var(--sans);color:#00e;text-decoration:underline;border:0;padding:3px 0;opacity:1}.hr::before{content:"▸ ";text-decoration:none;display:inline-block}
-.hr:hover{background:#ff0;color:#000}.hr.on{color:#c00;font-weight:700}
-#hc{border:2px inset #999;background:#fff;padding:12px;max-width:70ch}.hi{font:14px var(--sans)}.hi em{font:700 18px var(--serif);color:#000080}
-/* feelings → form buttons */
-.chip{background:#d4d0c8;color:#000;border:2px outset #fff;font:12px var(--sans)}.chip:hover,.chip.on{background:#d4d0c8;color:#000;border-style:inset}.big .chip{font-size:14px;padding:6px 14px}
-.res{border:2px inset #999;background:#fff;padding:14px}.res p{font:15px/1.5 var(--sans)}.res h4{color:#c06}.res .h::after{display:none}
-/* questions → guestbook notes */
-.cd{background:#ffffcc;background-image:none;border:1px solid #888;box-shadow:2px 2px 0 #0003;transform:none}.cd p{font:13px/1.5 var(--sans)}.cd .up{font:700 14px var(--hand)}
-/* now → little windows */
-.win{background:#d4d0c8;border:2px outset #fff;box-shadow:2px 2px 0 #000;rotate:0deg}
-.tb{background:linear-gradient(90deg,#000080,#1084d0);color:#fff;font:700 12px var(--sans)}.win p{font:700 16px var(--sans);color:#000}
-#pull .pc{--bg:#fffff4;--ink:#14143c;--ac:#00c;background:#fffff4;color:#14143c;border:3px ridge #9999cc;padding:24px;text-align:left}
-.pk{font-family:var(--mono)}.pc h3{font:700 clamp(28px,5vw,48px)/1 var(--serif);color:#000080}
-/* media player */
-#mb2{background:#1a1a22;color:#0f0;border:2px outset #888;animation:none;font:12px var(--mono)}
-.disc{border-radius:0;width:34px;height:34px;background:linear-gradient(#0f0,#060);color:#000}
-#mp.on #mt::after{content:" ▂▄▆▄▂"}#mm{background:#1a1a22;color:#0f0}#mm button:hover,#mm .sel{background:#0f0;color:#000}
-@media(max-width:800px){#room{margin:0;border:0;min-height:100vh}.lv{height:100dvh}.fxv{display:none}}
+/* desktop icons = the room links */
+#os{background:none;border:0;color:#fff}
+#os .br,#os a[data-r]{display:flex;flex-direction:column;align-items:center;text-align:center;font:11px/1.25 var(--sans);color:#fff;text-shadow:1px 1px 1px #000,0 0 3px #0008;text-decoration:none!important;opacity:1;padding:4px 2px;border:1px dotted transparent;transform:none!important;word-break:break-word}
+#os .br::before,#os a[data-r]::before{font-size:32px;line-height:1.15;filter:drop-shadow(1px 2px 1px #0006)}
+#os .br::before{content:"🖥️"}#os [data-r=thoughts]::before{content:"📝"}#os [data-r=people]::before{content:"👥"}#os [data-r=brain]::before{content:"💿"}#os [data-r=lives]::before{content:"🖼️"}#os [data-r=queue]::before{content:"🕒"}#os [data-r=feelings]::before{content:"💌"}#os [data-r=questions]::before{content:"📌"}#os [data-r=now]::before{content:"🗂️"}
+#os a.on,#os a[data-r]:hover{background:#316ac5b0;border-color:#fff}
+#os button:not(#mb){font:11px var(--sans);color:#000;text-align:center;opacity:1;background:var(--card);border:1px solid #003c74;border-radius:3px;padding:4px 6px}
+#os button:not(#mb):hover{border-color:#f0a020;color:#000}
+#os .m{color:#fff;text-shadow:1px 1px 1px #000}
+@media(min-width:801px){#os{display:grid;grid-template-columns:repeat(2,84px);grid-auto-rows:min-content;gap:6px 4px;width:188px;padding:18px 10px;overflow-y:auto;align-content:start}#os .cr,#os .fxv,#os #mb{display:none}#os button:not(#mb),#os .m{grid-column:1/-1}#os .m{margin-top:auto;text-align:center}}
+/* the room = an XP window */
+#room{--bg:#f8f5e6;--ink:#14286e;--ac:#0a56dc;margin:64px 28px 64px 224px;background:#f8f5e6 linear-gradient(#e6e0c8 1px,#0000 1px) 0 0/22px 22px;background-image:linear-gradient(#e6e0c8 1px,#0000 1px),linear-gradient(90deg,#e6e0c8 1px,#0000 1px);color:var(--ink);border:3px solid #0a3fd0;border-top:0;border-radius:9px 9px 3px 3px;box-shadow:0 12px 34px #0007;min-height:calc(100vh - 128px);transition:opacity .15s}
+#room::before,#door>div::before{content:var(--wt,"2:17 AM");display:block;height:30px;line-height:30px;padding-left:12px;margin:0 -3px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='21' height='21'%3E%3Crect x='.5' y='.5' width='20' height='20' rx='3' fill='%23245edb' stroke='%23fff'/%3E%3Crect x='5' y='13' width='8' height='3' fill='%23fff'/%3E%3C/svg%3E"),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='21' height='21'%3E%3Crect x='.5' y='.5' width='20' height='20' rx='3' fill='%23245edb' stroke='%23fff'/%3E%3Crect x='5.5' y='5.5' width='10' height='10' fill='none' stroke='%23fff' stroke-width='2'/%3E%3C/svg%3E"),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='21' height='21'%3E%3Crect x='.5' y='.5' width='20' height='20' rx='3' fill='%23d9502a' stroke='%23fff'/%3E%3Cpath d='M6 6l9 9M15 6l-9 9' stroke='%23fff' stroke-width='2.2'/%3E%3C/svg%3E"),var(--xb);background-repeat:no-repeat;background-position:right 54px center,right 30px center,right 6px center,0 0;color:#fff;font:700 13px var(--sans);text-shadow:1px 1px 0 #0a2a8a;border-radius:8px 8px 0 0;text-align:left}
+.rv{transform:none}
+.h{display:inline-block;position:relative;font:700 clamp(24px,3.4vw,42px)/1.1 var(--serif);text-transform:uppercase;color:#0b2a8a;background:#fff;border:1px solid #2a5bd7;padding:8px 16px;text-shadow:none;letter-spacing:.02em}
+.h::after{content:"";position:absolute;inset:-4px;height:auto;margin:0;background:linear-gradient(#2a5bd7,#2a5bd7) 0 0/7px 7px no-repeat,linear-gradient(#2a5bd7,#2a5bd7) 100% 0/7px 7px no-repeat,linear-gradient(#2a5bd7,#2a5bd7) 0 100%/7px 7px no-repeat,linear-gradient(#2a5bd7,#2a5bd7) 100% 100%/7px 7px no-repeat}
+.m{font:11px/1.5 var(--sans);letter-spacing:0;text-transform:none}.sub{font:14px var(--sans);max-width:60ch}.hand{font:700 18px var(--hand)}
+a:hover{background:#fff3b0;color:#000}
+/* thoughts → yellow notes with a blue title strip */
+.nts{gap:14px;margin-top:2vh}.nt{font:14px/1.6 var(--sans);max-width:62ch;margin-left:0;background:#fff7b0;border:1px solid #c9b648;border-radius:2px;box-shadow:2px 3px 0 #0002;padding:10px 12px;counter-reset:p}
+.nt b{background:var(--xb);color:#fff;margin:-10px -12px 8px;padding:2px 8px;font:700 11px var(--sans);counter-increment:p}.nt b::after{content:" · note #" counter(p)}
+/* people, brain → white cards with a blue top edge */
+:is(.pol,.bx){background:#fff;border:1px solid #0a3fd0;border-top:6px solid #0a56dc;border-radius:6px 6px 2px 2px;box-shadow:2px 3px 6px #0003;transform:none;padding:12px}
+.pol .ph{border:2px inset #aab;filter:none}.pol h3,.bx h3{font:700 17px var(--sans);text-transform:none;letter-spacing:0;color:#0b3bb8}.pol .nn,.bx .nn{font:13px/1.5 var(--sans);color:#223}
+.tg{border-radius:3px;background:#0a56dc;color:#fff;font:10px var(--sans);border:0}.pol small{font:11px var(--sans);color:#2a7a2a;transform:none}
+.st{border-radius:3px;background:#d9502a;color:#fff;font:700 10px var(--sans);transform:none;animation:none}.bar b{color:#2a7a2a}.mc{font:700 17px var(--hand);color:#c0306a}
+/* lives → slideshow */
+.lv{height:calc(100vh - 64px - 33px - 64px)}.lv .h{display:block;background:none;border:0;padding:0;color:#fff;font-size:clamp(36px,6vw,72px);text-shadow:3px 3px 0 #0b2a8a}.lv .h::after{display:none}.ls{font:italic 20px/1.4 var(--sans);text-shadow:1px 1px 0 #000}
+.lvb button{border-radius:3px;border:1px solid #003c74;background:var(--card);color:#000}
+/* hours → file list */
+.hrs{gap:1px}.hr{font:14px var(--sans);color:#0b2a8a;border:0;padding:4px 8px;opacity:1}.hr::before{content:"📄 "}.hr:hover,.hr.on{background:#316ac5;color:#fff}
+#hc{border:2px inset #7f9db9;background:#fff;padding:12px;max-width:70ch}.hi{font:14px var(--sans)}.hi em{font:700 18px var(--serif);color:#0b2a8a}
+/* feelings → buttons */
+.chip{background:var(--card);color:#000;border:1px solid #003c74;border-radius:3px;font:12px var(--sans)}.chip:hover{background:var(--card);color:#000;box-shadow:inset 0 0 0 2px #f8b330}.chip.on{background:#cfe0ff;color:#000}.big .chip{font-size:14px;padding:6px 14px}
+.res{border:2px inset #7f9db9;background:#fff;padding:14px}.res p{font:15px/1.5 var(--sans)}.res h4{color:#c0306a}.res .h::after{display:none}
+.addhere{border:1px dashed #0a56dc;color:#0b2a8a;background:#ffffffa0;font-family:var(--sans)}.addhere:hover{background:#e3edff;color:#0b2a8a}
+/* questions → pinned sticky notes */
+.cd{position:relative;background:#ffe97a;background-image:none;border:1px solid #d3b93d;box-shadow:3px 4px 0 #0002;transform:rotate(-1.2deg)}.cd:nth-child(2n){transform:rotate(1.4deg)}.cd::before{content:"📌";position:absolute;top:-12px;left:50%;font-size:20px}.cd p{font:14px/1.5 var(--sans)}.cd .up{font:700 17px var(--hand)}
+/* now → little XP windows */
+.win{background:#ece9d8;border:3px solid #0a56dc;border-top:0;border-radius:8px 8px 2px 2px;box-shadow:3px 4px 10px #0004;rotate:0deg}.tb{background:var(--xb);color:#fff;font:700 12px var(--sans);border-radius:6px 6px 0 0}.win p{font:700 16px var(--sans);color:#000}
+#pull .pc{--bg:#f8f5e6;--ink:#14286e;--ac:#0a56dc;background:#f8f5e6;color:#14286e;border:3px solid #0a3fd0;border-radius:9px;padding:24px;text-align:left}.pk{font-family:var(--sans)}.pc h3{font:700 clamp(26px,5vw,44px)/1 var(--serif);color:#0b2a8a}
+/* player (sound) = a small "Player" window */
+#mb2{animation:none;font:12px var(--sans)}.disc{border-radius:50%;background:radial-gradient(#8fe06a,#1e8c2b);color:#fff}
+#mm{background:#ece9d8;color:#000;border:3px solid #0a56dc;border-top:0;border-radius:8px 8px 2px 2px;padding:0 8px 8px}#mm::before{content:"🎵 Player";display:block;margin:0 -8px 8px;padding:4px 10px;background:var(--xb);color:#fff;font:700 12px var(--sans);border-radius:6px 6px 0 0}
+#mm button:hover,#mm .sel{background:#316ac5;color:#fff}
+#mp{bottom:54px}#npl{bottom:54px}#cth{bottom:110px}
+/* welcome window (the door) */
+#door{background:radial-gradient(120% 52% at 14% 118%,#2e7d12 0,#58a528 52%,#8fd14f 60%,#0000 61%),radial-gradient(90% 38% at 88% 122%,#3a8a17 0,#6fba3c 56%,#0000 57%),radial-gradient(ellipse 10% 6% at 19% 24%,#fff 0,#fffe 42%,#fff0 74%),radial-gradient(ellipse 8% 5% at 25% 21%,#fff 0,#fffe 42%,#fff0 74%),radial-gradient(ellipse 12% 5% at 29% 27%,#fff 0,#fffe 42%,#fff0 74%),radial-gradient(ellipse 11% 6% at 72% 13%,#fff 0,#fffe 42%,#fff0 74%),radial-gradient(ellipse 8% 5% at 78% 10%,#fff 0,#fffe 42%,#fff0 74%),radial-gradient(ellipse 9% 4% at 66% 16%,#fff 0,#fffe 42%,#fff0 74%),radial-gradient(ellipse 9% 5% at 56% 40%,#fff 0,#fffe 42%,#fff0 74%),radial-gradient(ellipse 10% 4% at 62% 43%,#fff 0,#fffe 42%,#fff0 74%),radial-gradient(ellipse 8% 4% at 9% 50%,#fff 0,#fffe 42%,#fff0 74%),linear-gradient(#1f6fe0 0,#5aa6f5 42%,#cfe8ff 74%);background-attachment:fixed;background-size:100% 100%;color:#14286e;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px}
+#door>div{width:min(560px,92vw);background:#ece9d8;border:3px solid #0a3fd0;border-top:0;border-radius:9px 9px 3px 3px;padding:0 20px 26px;box-shadow:0 12px 34px #0007;display:flex;flex-direction:column;align-items:center;text-align:center}
+#door>div::before{content:"🖥️ Welcome";align-self:stretch;margin:0 -23px 22px}
+#door h1{font:700 clamp(44px,9vw,84px)/1 var(--serif);color:#0b2a8a;text-shadow:none;letter-spacing:0}
+.d1{font:italic 20px var(--sans);color:#14286e}.d2{font:13px var(--sans);color:#2a7a2a}
+#enter{background:var(--card);color:#000;border:1px solid #003c74;border-radius:4px;padding:7px 26px;font:700 14px var(--sans)}#enter:hover{letter-spacing:0;box-shadow:inset 0 0 0 2px #f8b330}
+#door .dtag{position:static;margin:18px auto 0;max-width:min(520px,90vw);background:#ffffe1;color:#000;border:1px solid #000;border-radius:8px;padding:10px 14px;font:12px/1.5 var(--sans);text-transform:none}
+/* taskbar + start menu (built by themes.js) */
+#tbar,#sm{display:none}
+#tbar{position:fixed;left:0;right:0;bottom:0;height:40px;z-index:55;align-items:stretch;gap:6px;background:linear-gradient(#3f8cf3,#245edb 12%,#1c4fc4 85%,#1941a5);border-top:1px solid #0b2f86;font:12px var(--sans);color:#fff}
+body[data-room=door] #tbar{display:none!important}
+#tbar .s{display:flex;align-items:center;gap:8px;padding:0 22px 0 14px;border:0;border-radius:0 12px 12px 0;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18'%3E%3Crect x='1' y='2' width='7' height='6' fill='%23f25022'/%3E%3Crect x='9' y='1' width='8' height='7' fill='%237fba00'/%3E%3Crect x='1' y='10' width='7' height='6' fill='%2300a4ef'/%3E%3Crect x='9' y='10' width='8' height='7' fill='%23ffb900'/%3E%3C/svg%3E") 12px center/18px no-repeat,linear-gradient(#5db04a,#3c9a2f 50%,#2f8a25);padding-left:36px;color:#fff;font:italic 700 18px "Trebuchet MS",var(--sans);text-shadow:1px 1px 2px #0007;box-shadow:inset 0 0 0 1px #0003}
+#tbar .w{align-self:center;height:28px;line-height:26px;padding:0 16px;background:#1a47b0;border:1px solid #0b2f86;border-radius:3px;box-shadow:inset 1px 1px 3px #0007;white-space:nowrap}
+#tbar .c{margin-left:auto;display:flex;align-items:center;padding:0 16px;background:linear-gradient(#0f8fe9,#0a6ad0);border-left:1px solid #0b3f9a}
+#sm{position:fixed;left:0;bottom:40px;z-index:56;width:260px;background:#fff;border:3px solid #0a3fd0;border-radius:8px 8px 0 0;box-shadow:4px 0 16px #0006;overflow:hidden;font:13px var(--sans)}
+#sm b{display:block;padding:10px 14px;background:var(--xb);color:#fff;font:700 15px var(--sans)}
+#sm a{display:block;padding:7px 14px;color:#000;text-decoration:none}#sm a:hover{background:#316ac5;color:#fff}
+#sm.o,#tbar{display:flex}#sm:not(.o){display:none}
+@media(max-width:800px){
+#os{background:var(--xb);border-bottom:1px solid #0b2f86}#os a,#os .br{color:#fff}#os .br::before,#os a[data-r]::before{display:none}
+#room{margin:56px 0 44px;border-width:0;border-radius:0;box-shadow:none}#room::before{margin:0}.lv{height:100dvh}#tbar .w{display:none}#door>div::before{margin:0 -23px 22px}
+}
 }
 
 /* ============ 3 · THE FILM — title cards, posters, credits ============ */
@@ -224,7 +236,7 @@ html[data-theme=bed]{
 --card:#1f1b19;--ct:#e9e1d4;--ln:#ffffff22;--rad:99px;--shd:0 6px 20px #0006;
 & body,& body[data-room]{--bg:#13100f;--ink:#e9e1d4;--ac:#f0b46c;--ac2:#8fb3ff;--mu:#9a9388;--hf:var(--sans);--hw:600;--gr:.3}
 & body[data-room=thoughts],& body[data-room=lives],& body[data-room=now]{--bg:#11151c}
-& body[data-room=brain]{--bg:#19141d}& body[data-room=hours]{--bg:#121714}& body[data-room=feelings]{--bg:#1c1416}
+& body[data-room=brain]{--bg:#19141d}& body[data-room=queue]{--bg:#121714}& body[data-room=feelings]{--bg:#1c1416}
 & ::selection{background:#f0b46c55}
 & body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:1;background:radial-gradient(520px circle at var(--mx,85%) var(--my,12%),#f0b46c24,transparent 60%)}
 #fx{display:block;position:fixed;inset:-180px 0 0;pointer-events:none;z-index:2;opacity:.14;
@@ -278,4 +290,206 @@ animation:rain 1.6s linear infinite}
 .tb{background:none;color:var(--ac);font:400 12px var(--mono)}.win p{font:italic 300 26px/1.2 var(--serif)}
 #pull .pc{text-align:left}.pc h3{font:600 clamp(36px,6vw,80px)/.95 var(--sans);letter-spacing:-.035em}.pk{font-family:var(--mono);font-weight:400}.gl{animation:none}
 #mb2{animation:none;box-shadow:0 0 24px #f0b46c33}.disc{background:radial-gradient(circle,var(--ac) 0 18%,#0b0b0b 19% 24%,#222 25%);color:transparent}
+}
+
+/* ============ 5 · THE ARCADE — Game Boy green, CRT scanlines, pixel font ============ */
+html[data-theme=arcade]{
+--serif:"Press Start 2P","Courier New",monospace;--sans:VT323,"Courier New",monospace;--mono:VT323,"Courier New",monospace;--hand:VT323,monospace;
+--card:#8bac0f;--ct:#0f380f;--ln:#0f380f;--bw:3px;--rad:0;--shd:3px 3px 0 #306230;
+& body,& body[data-room]{--bg:#0f380f;--ink:#9bbc0f;--ac:#9bbc0f;--ac2:#8bac0f;--mu:#6f8f1a;--hf:var(--serif);--hw:400;--gr:0;font:20px/1.3 var(--sans);background:#0f380f}
+& body::after{display:none}
+#fx{display:block;position:fixed;inset:0;pointer-events:none;z-index:90;background:repeating-linear-gradient(0deg,#0000 0 2px,#0f380f2e 2px 3px),radial-gradient(ellipse at center,#0000 55%,#0f380f88 100%)}
+#room{--bg:#9bbc0f;--ink:#0f380f;--ac:#306230;background:#9bbc0f;color:#0f380f;margin:20px 20px 20px 230px;border:6px solid #306230;border-radius:18px;box-shadow:0 0 0 4px #0f380f,inset 0 0 70px #0f380f55,0 0 40px #8bac0f44;min-height:calc(100vh - 40px)}
+.rv{transform:none}
+#os{color:#9bbc0f}#os .br{font:12px var(--serif);color:#9bbc0f}#os a{font:10px/1.7 var(--serif);color:#8bac0f;opacity:1;text-decoration:none!important;transform:none}#os a.on{color:#9bbc0f}#os a.on::before{content:"▶ "}#os button{font:18px var(--sans);color:#9bbc0f}
+.h{font:400 clamp(16px,2.4vw,28px)/1.5 var(--serif);color:#0f380f;text-shadow:2px 2px 0 #8bac0f;letter-spacing:0;text-transform:uppercase}
+.h::after{height:6px;margin-top:10px;background:repeating-linear-gradient(90deg,#0f380f 0 8px,#0000 8px 12px)}
+.m{font:18px var(--sans);letter-spacing:0;text-transform:none}.sub{font:20px var(--sans)}.hand{font:20px var(--sans)}
+a:hover{background:#0f380f;color:#9bbc0f}
+/* thoughts → RPG dialog boxes */
+.nts{gap:30px;margin-top:4vh}
+.nt{position:relative;background:#0f380f;color:#9bbc0f;border:4px double #9bbc0f;outline:4px solid #0f380f;padding:20px 22px 24px;font:22px/1.35 var(--sans);max-width:62ch;margin-left:0;transform:none}
+.nt b{display:inline-block;margin:-34px 0 10px -8px;padding:4px 8px;background:#9bbc0f;color:#0f380f;border:3px solid #0f380f;font:9px var(--serif)}
+.nt::after{content:"▼";position:absolute;right:14px;bottom:6px;font-size:14px;animation:ab 1s steps(2) infinite}
+@keyframes ab{50%{opacity:0}}
+/* people, brain, questions, now → framed pixel cards */
+:is(.pol,.bx,.cd,.win){background:#8bac0f;color:#0f380f;border:4px solid #0f380f;border-radius:0;box-shadow:4px 4px 0 #306230;transform:none;rotate:0deg}
+.pol .ph{filter:grayscale(1) contrast(1.2) sepia(.9) hue-rotate(50deg);border:3px solid #0f380f;image-rendering:pixelated}
+:is(.pol h3,.bx h3){font:12px/1.5 var(--serif);text-transform:none;color:#0f380f}:is(.pol .nn,.bx .nn,.cd p){font:20px/1.3 var(--sans);color:#0f380f}
+.tg,.st{border-radius:0;background:#0f380f;color:#9bbc0f;font:8px var(--serif);transform:none;animation:none}.pol small,.bar b,.mc{font:18px var(--sans);color:#306230}
+.tb{background:#0f380f;color:#9bbc0f;font:9px var(--serif)}.win p{font:12px/1.5 var(--serif);color:#0f380f}
+/* lives → tinted scenes */
+.lv{filter:grayscale(1) sepia(1) hue-rotate(50deg) saturate(1.6) contrast(1.1)}.lv .h{text-shadow:3px 3px 0 #0f380f;color:#9bbc0f}.ls{font:22px/1.4 var(--sans)}
+/* hours → save slots */
+.hrs{gap:12px;counter-reset:sl}
+.hr{counter-increment:sl;display:flex;align-items:center;gap:14px;background:#8bac0f;border:4px solid #0f380f;padding:10px 14px;font:22px var(--sans);color:#0f380f;opacity:1}
+.hr::before{content:"SLOT " counter(sl);font:9px var(--serif);color:#306230;min-width:70px}
+.hr:hover,.hr.on{background:#0f380f;color:#9bbc0f}.hr:hover::before,.hr.on::before{color:#8bac0f}
+#hc{border:4px solid #0f380f;background:#8bac0f;padding:14px;max-width:70ch}.hi{font:22px var(--sans)}.hi em{font:12px var(--serif);font-style:normal}
+/* feelings → a menu with a cursor */
+.chip{position:relative;background:none;color:#0f380f;border:0;box-shadow:none;font:11px/1.6 var(--serif);padding:10px 14px 10px 30px;text-align:left}
+.chip::before{content:"▶";position:absolute;left:6px;opacity:0}.chip:hover,.chip.on{background:none;color:#0f380f}.chip:hover::before,.chip.on::before{opacity:1;animation:ab .8s steps(2) infinite}
+.res{background:#0f380f;color:#9bbc0f;border:4px double #9bbc0f;outline:4px solid #0f380f;padding:18px}.res p{font:22px/1.35 var(--sans)}.res h4{color:#9bbc0f}.res .h::after{display:none}
+.addhere{border:3px dashed #0f380f;color:#0f380f;background:none;font:20px var(--sans)}
+/* the opening */
+#door{background:#0f380f;color:#9bbc0f}#door h1{font:400 clamp(30px,8vw,92px)/1.2 var(--serif);color:#9bbc0f;text-shadow:5px 5px 0 #306230;letter-spacing:0}
+.d1{font:24px var(--sans);color:#9bbc0f}.d2{font:20px var(--sans);color:#8bac0f}.dtag{font:20px var(--sans);color:#8bac0f}
+#enter{background:none;color:#9bbc0f;border:4px solid #9bbc0f;padding:10px 22px;font:12px var(--serif);animation:ab 1s steps(2) infinite}#enter:hover{letter-spacing:0;background:#9bbc0f;color:#0f380f}
+#pull .pc{--bg:#9bbc0f;--ink:#0f380f;background:#9bbc0f;color:#0f380f;border:6px solid #306230;padding:24px}.pc h3{font:400 clamp(16px,3vw,28px)/1.4 var(--serif);color:#0f380f}.pk{font-family:var(--sans)}
+#mb2,#mm{background:#8bac0f;color:#0f380f;border:3px solid #0f380f;animation:none;font:18px var(--sans)}.disc{border-radius:0;background:#0f380f;color:#9bbc0f}#mm button:hover,#mm .sel{background:#0f380f;color:#9bbc0f}
+@media(max-width:800px){#room{margin:0;border-width:0 0 0 0;border-radius:0;box-shadow:none}.lv{height:100dvh}}
+@media(prefers-reduced-motion:reduce){.nt::after,#enter,.chip::before{animation:none!important}}
+}
+
+/* ============ 6 · THE NIGHT TRAIN — split-flap board, tickets, the window. queue = departures (times start at 02:17, +17 min each) ============ */
+html[data-theme=train]{
+--serif:Oswald,"Arial Narrow",sans-serif;--sans:"Share Tech Mono","Courier New",monospace;--mono:"Share Tech Mono","Courier New",monospace;--hand:"Share Tech Mono",monospace;
+--card:#121a28;--ct:#f3e9cf;--ln:#ffb30088;--bw:1.5px;--rad:3px;--shd:none;
+& body,& body[data-room]{--bg:#090d16;--ink:#f3e9cf;--ac:#ffb300;--ac2:#ff6a3d;--mu:#8e9bb3;--hf:var(--serif);--hw:600;--gr:0;font:15px/1.6 var(--sans);background:linear-gradient(#0b1220,#070a12) fixed}
+& body::after{display:none}
+#fx{display:block;position:fixed;left:0;right:0;bottom:0;height:90px;pointer-events:none;z-index:5;opacity:.5;background:radial-gradient(circle,#ffd98a 0 3px,#0000 4px) 0 40px/170px 100px repeat-x,radial-gradient(circle,#ffb30088 0 2px,#0000 3px) 60px 14px/110px 100px repeat-x;animation:pass 16s linear infinite}
+@keyframes pass{to{background-position:-1700px 40px,-1100px 14px}}
+#room{--bg:#090d16;--ink:#f3e9cf;--ac:#ffb300;background:none;color:#f3e9cf;margin:24px 24px 24px 230px;border:0;min-height:calc(100vh - 48px)}.rv{transform:none}
+#os{background:#05070d;color:#f3e9cf;border-right:3px solid #ffb300}#os .br{font:600 20px var(--serif)}#os .fp{flex-wrap:nowrap;gap:2px}#os a{font:600 14px var(--serif);letter-spacing:.16em;text-transform:uppercase;color:#9fb0cc;text-decoration:none!important;opacity:1;transform:none}#os a.on{color:#ffb300}#os a.on::before{content:"▸ "}#os button{font:13px var(--mono);color:#cdd7ea}#os .m{color:#5d6b85}
+/* split-flap letters (built by themes.js) */
+.fp{display:inline-flex;flex-wrap:wrap;gap:3px;vertical-align:top}.fl{display:inline-block;min-width:.72em;padding:.06em .12em;text-align:center;font-style:normal;color:#ffb300;border-radius:4px;background:linear-gradient(#1c2434 49%,#04060a 49% 51%,#151b28 51%);box-shadow:inset 0 0 0 1px #2c374b;text-shadow:0 0 8px #ffb30055}.fl.sp{background:none;box-shadow:none;min-width:.35em}
+.h{font:600 clamp(26px,4.2vw,54px)/1.15 var(--serif);letter-spacing:.04em;text-transform:uppercase;color:#ffb300}.h::after{display:none}
+.m{font:13px/1.5 var(--mono);letter-spacing:.04em;text-transform:none;color:#8e9bb3}.sub{font:italic 16px var(--mono)}.hand{font:700 16px var(--mono)}a:hover{background:none;color:#ffb300}
+/* thoughts → LED announcement strips */
+.nts{display:flex;flex-wrap:wrap;gap:18px 22px;align-items:flex-start;margin-top:4vh}.nt{width:min(380px,100%);max-width:none;margin:0;padding:12px 16px 14px;background:#05070d;border:1px solid #ffb30044;border-left:6px solid #ffb300;border-radius:2px;color:#ffcf66;font:15px/1.5 var(--mono);text-shadow:0 0 6px #ffb30055;transform:none}
+.nt b{background:none;margin:0 0 6px;padding:0;font:12px var(--mono);color:#ff6a3d;letter-spacing:.14em}.nt b::after{content:" · NEXT STOP";background:none}
+/* people → tickets */
+.pol{position:relative;padding:34px 18px 14px;background:#f1e6c8;color:#2a2118;border:0;border-radius:6px;box-shadow:0 8px 20px #0009;transform:none;-webkit-mask:radial-gradient(circle 9px at 0 50%,#0000 97%,#000) left/51% 100% no-repeat,radial-gradient(circle 9px at 100% 50%,#0000 97%,#000) right/51% 100% no-repeat;mask:radial-gradient(circle 9px at 0 50%,#0000 97%,#000) left/51% 100% no-repeat,radial-gradient(circle 9px at 100% 50%,#0000 97%,#000) right/51% 100% no-repeat}
+.pol::before{content:"NIGHT EXPRESS · ADMIT ONE";position:absolute;inset:0 0 auto;height:24px;line-height:24px;text-align:center;background:#2a2118;color:#ffb300;font:600 11px var(--serif);letter-spacing:.22em}
+.pol .ph{border-radius:3px;filter:sepia(.4) contrast(1.05)}.pol h3{font:700 22px var(--serif);text-transform:uppercase;letter-spacing:.06em;color:#2a2118}.pol .m::before{content:"FROM · "}.pol .nn{font:14px/1.5 var(--mono);color:#2a2118}
+.tg{border-radius:2px;background:#2a2118;color:#ffcf66;border:0;font:600 10px var(--serif);letter-spacing:.1em}.pol small{display:block;margin-top:8px;padding-top:6px;border-top:2px dashed #2a211866;font:12px var(--mono);color:#8c2a1e;transform:none}.pol small::before{content:"CLASS · "}
+/* brain → boarding passes */
+.bx{background:#e9dfc2;color:#2a2118;border:0;border-top:10px solid #ffb300;border-radius:4px;box-shadow:0 8px 20px #0009;transform:none}.bx h3{font:700 22px var(--serif);text-transform:uppercase;letter-spacing:.04em;color:#2a2118}.bx .nn{font:14px/1.5 var(--mono)}
+.st{border-radius:2px;background:#2a2118;color:#ffb300;font:600 11px var(--serif);letter-spacing:.14em;transform:none;animation:none}.bar b{color:#8c2a1e}.mc{font:700 15px var(--mono);color:#8c2a1e}
+/* lives → the view from the window */
+body[data-room=lives]::before{content:"";position:fixed;inset:0;z-index:30;pointer-events:none;border-radius:44px;box-shadow:inset 0 0 0 clamp(12px,3vw,34px) #0b1018,inset 0 0 0 calc(clamp(12px,3vw,34px) + 4px) #3b475c,inset 0 0 170px 40px #000c}
+.lv{filter:saturate(.75) brightness(.9)}.lv section{position:relative}.lv section::after{content:"";position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(90deg,#0000 0 150px,#0008 150px 178px);animation:poles 2.8s linear infinite}@keyframes poles{to{background-position:-178px 0}}
+/* questions → delay notices, now → platform signs */
+.cd{background:#ffcf33;color:#1a1408;border:0;border-left:8px solid #c4301c;border-radius:2px;box-shadow:0 5px 0 #0007;rotate:0deg;transform:none}.cd p{font:15px/1.5 var(--mono)}.cd .up{font:700 16px var(--mono);color:#8c2a1e}
+.win{background:#0f3d2e;color:#fff;border:3px solid #e9efe9;border-radius:6px;box-shadow:0 0 0 2px #0f3d2e;rotate:0deg;transform:none}.tb{background:#0a2a20;color:#ffb300;font:600 12px var(--serif);letter-spacing:.16em;text-transform:uppercase}.win p{font:600 22px var(--serif);color:#fff}
+/* queue → the departures board */
+#qq{background:#05070d;border:3px solid #2c374b;border-radius:8px;padding:14px;box-shadow:0 0 0 3px #090d16,0 0 0 5px #3b475c}#qq .qh2::before{content:"DEPARTURES · ";color:#ffb300}
+.qa,.qi{border:0;border-bottom:2px solid #05070d;border-radius:3px;background:#0c111b;color:#ffcf66;font:500 16px var(--serif);letter-spacing:.06em;text-transform:uppercase}.qa{border:1px solid #2c374b;color:#cdd7ea}.qa:hover{background:#ffb300;color:#090d16}
+.qi::before{content:attr(data-t);order:-1;flex:none;padding:2px 9px;border-radius:4px;font:600 20px var(--serif);letter-spacing:.1em;color:#ffb300;background:linear-gradient(#1c2434 49%,#04060a 49% 51%,#151b28 51%);box-shadow:inset 0 0 0 1px #2c374b}
+.qk{color:#8e9bb3}.qi.done{opacity:.6}.qi.done .qt{text-decoration:none}.qi.done .qt::after{content:" — DEPARTED";color:#ff6a3d;font-size:11px}.qi.now::before{animation:blink 1s steps(2) infinite}@keyframes blink{50%{opacity:.35}}.qe{font:15px var(--mono)}.qbn{border-color:#ffb300}
+/* feelings → destination buttons, the answer is a ticket */
+.chip{background:#0c111b;color:#ffcf66;border:1px solid #ffb30066;border-radius:3px;font:600 14px var(--serif);letter-spacing:.12em;text-transform:uppercase}.chip:hover,.chip.on{background:#ffb300;color:#090d16;box-shadow:none}
+.res{background:#f1e6c8;color:#2a2118;border-radius:6px;padding:18px;box-shadow:0 8px 20px #0009}.res p{font:15px/1.5 var(--mono)}.res h4{color:#8c2a1e;font:600 13px var(--serif);letter-spacing:.16em}.res .h{color:#2a2118}.res .h::after{display:none}
+.addhere{border:1.5px dashed #ffb30088;color:#ffcf66;background:none;font-family:var(--mono)}
+/* the opening: a platform at 2am */
+#door{background:radial-gradient(ellipse at 50% 100%,#ffb30030,#0000 60%),linear-gradient(#0b1220,#05070c);color:#f3e9cf}#door h1{font:600 clamp(44px,10vw,130px)/1 var(--serif);color:#ffb300;letter-spacing:0}
+.d1{font:600 22px var(--serif);letter-spacing:.2em;text-transform:uppercase;color:#f3e9cf}.d2{font:15px var(--mono);color:#ffb300}.dtag{font:13px var(--mono);color:#8e9bb3}
+#enter{background:#ffb300;color:#090d16;border:0;border-radius:3px;padding:10px 28px;font:600 18px var(--serif);letter-spacing:.2em;text-transform:uppercase;box-shadow:0 0 26px #ffb30066}#enter:hover{background:#fff;letter-spacing:.2em}
+#pull .pc{--bg:#f1e6c8;--ink:#2a2118;background:#f1e6c8;color:#2a2118;border:0;border-radius:6px;padding:26px}.pc h3{font:700 clamp(28px,5vw,48px)/1 var(--serif);text-transform:uppercase;color:#2a2118}.pk{font-family:var(--mono)}
+#mb2,#mm{background:#05070d;color:#ffcf66;border:1px solid #ffb30088;animation:none;font:600 13px var(--serif);letter-spacing:.1em}.disc{border-radius:50%;background:radial-gradient(#ffd98a,#b87400);color:#090d16}#mm button:hover,#mm .sel{background:#ffb300;color:#090d16}
+@media(max-width:800px){#room{margin:12px}.lv{height:100dvh}.fl{min-width:.62em}}
+@media(prefers-reduced-motion:reduce){#fx,.lv section::after,.qi.now::before{animation:none!important}}
+}
+
+/* ============ 7 · THE SCRAPBOOK — kraft paper, washi tape, stickers, torn scraps ============ */
+html[data-theme=scrap]{
+--serif:Caveat,"Comic Sans MS",cursive;--sans:"Patrick Hand","Comic Sans MS",sans-serif;--mono:"Special Elite","Courier New",monospace;--hand:Caveat,cursive;
+--card:#fff3a8;--ct:#3a2f28;--ln:#3a2f28;--bw:2px;--rad:6px;--shd:2px 3px 0 #0003;
+& body,& body[data-room]{--bg:#d9c6a3;--ink:#3a2f28;--ac:#d9506f;--ac2:#4aa38a;--mu:#7a6a58;--hf:var(--serif);--hw:700;--gr:0;font:18px/1.5 var(--sans);background:radial-gradient(#0000000f 1px,#0000 1.6px) 0 0/7px 7px,radial-gradient(#ffffff22 1px,#0000 1.6px) 3px 3px/9px 9px,#d9c6a3}
+& body::after{display:none}
+#room{--bg:#f6edd9;--ink:#3a2f28;--ac:#d9506f;position:relative;background:#f6edd9 linear-gradient(#0000 31px,#7fb1d255 31px 32px) 0 0/100% 32px;color:#3a2f28;margin:34px 28px 28px 230px;padding-top:12px;border:0;border-radius:3px 10px 4px 8px;box-shadow:0 10px 30px #0005,2px 2px 0 #fffa inset;min-height:calc(100vh - 62px)}
+#room::before,#room::after{content:"";position:absolute;top:-14px;width:130px;height:32px;background:repeating-linear-gradient(135deg,#ffffff55 0 6px,#0000 6px 12px),#f4a6b8cc;transform:rotate(-4deg);box-shadow:0 1px 2px #0002}
+#room::before{left:7%}#room::after{right:8%;background:repeating-linear-gradient(45deg,#ffffff55 0 6px,#0000 6px 12px),#9fd8c4cc;transform:rotate(3deg)}
+.rv{transform:none}
+#os{color:#3a2f28}#os .br{font:700 30px var(--serif);color:#3a2f28}#os a{font:19px var(--sans);color:#3a2f28;text-decoration:none!important;opacity:1}#os a.on{background:linear-gradient(transparent 55%,#f2c84b99 55% 90%,transparent 90%);transform:none}
+.h{display:inline-block;font:700 clamp(40px,5.6vw,72px)/1.05 var(--serif);color:#3a2f28;background:linear-gradient(transparent 62%,#f2c84b99 62% 92%,transparent 92%);rotate:-1.5deg;text-shadow:none;letter-spacing:0}.h::after{display:none}
+.m{font:13px/1.5 var(--mono);letter-spacing:0;text-transform:none;color:#7a6a58}.sub{font:italic 20px var(--sans)}.hand{font:700 22px var(--serif)}
+a:hover{background:#f2c84b88;color:#3a2f28}
+/* thoughts → torn scraps with tape */
+.nts{gap:26px;margin-top:3vh}
+.nt{position:relative;max-width:60ch;margin-left:0;padding:16px 20px 14px;background:#fff3a8;color:#3a2f28;border-radius:2px 8px 3px 6px;box-shadow:2px 4px 0 #0002;font:20px/1.45 var(--sans);rotate:-1.2deg;transform:none}
+.nt:nth-child(3n+2){background:#ffd6e0;rotate:1.3deg;margin-left:5%}.nt:nth-child(3n){background:#d6f2e4;rotate:-.6deg;margin-left:2%}
+.nt::before{content:"";position:absolute;top:-11px;left:calc(50% - 42px);width:84px;height:20px;background:repeating-linear-gradient(135deg,#ffffff66 0 5px,#0000 5px 10px),#f4a6b8bb;rotate:-3deg}
+.nt:nth-child(2n)::before{background:repeating-linear-gradient(45deg,#ffffff66 0 5px,#0000 5px 10px),#8ec5e8bb;rotate:4deg}
+.nt b{background:none;margin:0 0 4px;padding:0;font:12px var(--mono);color:#7a6a58}.nt b::after{display:none}
+/* people → taped polaroids */
+.pol{position:relative;background:#fff;border:0;border-radius:2px;padding:10px 10px 18px;box-shadow:2px 5px 10px #0004;rotate:-2deg;transform:none}.pol:nth-child(2n){rotate:2deg}.pol:nth-child(3n){rotate:-.8deg}
+.pol::before{content:"";position:absolute;top:-12px;left:calc(50% - 40px);width:80px;height:22px;background:repeating-linear-gradient(135deg,#ffffff66 0 5px,#0000 5px 10px),#f2c84bbb;rotate:3deg;z-index:2}.pol:nth-child(2n)::before{background:repeating-linear-gradient(45deg,#ffffff66 0 5px,#0000 5px 10px),#9fd8c4bb;rotate:-4deg}
+.pol .ph{filter:none;border-radius:1px}.pol h3{font:700 26px var(--serif);text-transform:none;color:#3a2f28}.pol .nn{font:18px/1.35 var(--sans)}
+.tg{border-radius:99px;background:#d9506f;color:#fff;font:11px var(--mono);border:0}.pol small{font:12px var(--mono);color:#4aa38a;transform:none}
+/* brain, questions, now → cards with stickers */
+.bx{position:relative;background:#fffdf6;border:2px dashed #3a2f28;border-radius:6px;box-shadow:3px 4px 0 #0002;rotate:.6deg;transform:none}.bx:nth-child(2n){rotate:-.8deg}
+.bx::after{content:"★";position:absolute;right:-10px;top:-14px;font-size:30px;color:#f2c84b;text-shadow:0 1px 0 #3a2f28;rotate:12deg}.bx:nth-child(3n+2)::after{content:"♥";color:#d9506f}.bx:nth-child(3n)::after{content:"✿";color:#4aa38a}
+.bx h3{font:700 28px var(--serif);text-transform:none;color:#3a2f28}.bx .nn{font:18px/1.4 var(--sans)}.st{border-radius:99px;background:#d9506f;color:#fff;font:11px var(--mono);transform:none;animation:none}.bar b{color:#4aa38a;font:13px var(--mono)}.mc{font:700 22px var(--serif);color:#d9506f}
+.cd{position:relative;background:#ffe97a;background-image:none;color:#3a2f28;border:0;border-radius:2px 2px 14px 2px;box-shadow:3px 4px 0 #0002;rotate:-1.5deg;transform:none}.cd:nth-child(2n){background:#ffc9d6;rotate:1.5deg}.cd:nth-child(3n){background:#cdeedd}
+.cd::before{content:"";position:absolute;top:-10px;left:calc(50% - 36px);width:72px;height:18px;background:repeating-linear-gradient(135deg,#ffffff66 0 5px,#0000 5px 10px),#8ec5e8bb;rotate:-3deg}.cd p{font:19px/1.4 var(--sans)}.cd .up{font:700 22px var(--serif)}
+.win{background:#fffdf6;border:2px solid #3a2f28;border-radius:4px;box-shadow:3px 4px 0 #0003;rotate:0deg}.tb{background:#f2c84b;color:#3a2f28;font:700 20px var(--serif)}.win p{font:700 24px var(--serif);color:#3a2f28}
+.lv{filter:sepia(.35) saturate(.9)}
+/* hours → tape strips */
+.hrs{gap:8px}.hr{display:inline-block;width:fit-content;font:700 24px var(--serif);color:#3a2f28;background:repeating-linear-gradient(135deg,#ffffff55 0 5px,#0000 5px 10px),#9fd8c4cc;border:0;padding:2px 16px;opacity:1;rotate:-1deg;box-shadow:0 1px 2px #0003}.hr:nth-child(2n){background:repeating-linear-gradient(45deg,#ffffff55 0 5px,#0000 5px 10px),#f4a6b8cc;rotate:1deg}.hr:hover,.hr.on{background:#f2c84b;rotate:0deg}
+#hc{background:#fffdf6;border:2px dashed #3a2f28;padding:14px;max-width:70ch}.hi{font:19px var(--sans)}.hi em{font:700 26px var(--serif);color:#d9506f}
+/* feelings → stickers */
+.chip{background:#fff3a8;color:#3a2f28;border:2px solid #3a2f28;border-radius:99px;font:700 20px var(--serif);rotate:-2deg;box-shadow:2px 3px 0 #0003}.chip:nth-child(2n){background:#ffd6e0;rotate:2deg}.chip:nth-child(3n){background:#d6f2e4}.chip:hover,.chip.on{background:#f2c84b;color:#3a2f28;scale:1.06}
+.res{background:#fffdf6;border:2px dashed #3a2f28;padding:18px}.res p{font:20px/1.4 var(--sans)}.res h4{color:#d9506f;font:700 24px var(--serif)}.res .h::after{display:none}
+.addhere{border:2px dashed #3a2f28;color:#3a2f28;background:#fffdf688;font:700 22px var(--serif)}.addhere:hover{background:#f2c84b88;color:#3a2f28}
+/* the opening */
+#door{background:radial-gradient(#0000000f 1px,#0000 1.6px) 0 0/7px 7px,#d9c6a3;color:#3a2f28}#door h1{font:700 clamp(70px,16vw,190px)/.9 var(--serif);color:#3a2f28;text-shadow:5px 5px 0 #f4a6b8;rotate:-2deg;letter-spacing:0}
+.d1{font:700 30px var(--serif);color:#3a2f28}.d2{font:15px var(--mono);color:#7a6a58}.dtag{font:19px var(--sans);color:#3a2f28}
+#enter{background:#f2c84b;color:#3a2f28;border:2px solid #3a2f28;border-radius:99px;padding:8px 30px;font:700 26px var(--serif);rotate:-3deg;box-shadow:3px 4px 0 #3a2f28}#enter:hover{letter-spacing:0;rotate:2deg;scale:1.05}
+#pull .pc{--bg:#f6edd9;--ink:#3a2f28;background:#f6edd9;color:#3a2f28;border:2px dashed #3a2f28;padding:26px;rotate:-1deg}.pc h3{font:700 clamp(36px,6vw,64px)/1 var(--serif);color:#3a2f28}.pk{font-family:var(--mono)}
+#mb2,#mm{background:#fff3a8;color:#3a2f28;border:2px solid #3a2f28;animation:none;font:700 18px var(--serif)}.disc{border-radius:50%;background:#d9506f;color:#fff}#mm button:hover,#mm .sel{background:#f2c84b;color:#3a2f28}
+@media(max-width:800px){#room{margin:44px 10px 20px}.lv{height:100dvh}}
+}
+
+/* ============ 8 · THE CONVENIENCE STORE (Japan) — green/orange/red stripe, white fluorescent light, レシート, ポイントカード, 棚札, POP, お会計 ============ */
+html[data-theme=store]{
+--sans:"Zen Maru Gothic","Noto Sans JP",sans-serif;--jp:"Noto Sans JP","Zen Maru Gothic",sans-serif;--serif:var(--jp);--mono:DotGothic16,"Noto Sans JP",monospace;--hand:"Zen Maru Gothic",sans-serif;
+--card:#fff;--ct:#1d2733;--ln:#1d2733;--bw:2px;--rad:10px;--shd:0 3px 0 #1d2733;
+& body,& body[data-room]{--bg:#f4f8f9;--ink:#1d2733;--ac:#00984a;--ac2:#f47a20;--mu:#6a7b86;--hf:var(--jp);--hw:900;--gr:0;font:15px/1.6 var(--sans);background:radial-gradient(ellipse 90% 30% at 50% 0,#fff,#fff0 70%),linear-gradient(#0000 79px,#d7e0e3 79px 80px) 0 0/80px 80px,linear-gradient(90deg,#0000 79px,#d7e0e3 79px 80px) 0 0/80px 80px,#f6f9fa;background-attachment:fixed}
+& body::after{display:none}
+#fx{display:block;position:fixed;left:0;right:0;top:0;height:14px;pointer-events:none;z-index:60;background:linear-gradient(#00984a 0 34%,#f47a20 34% 67%,#e60012 67%)}
+#fx::after{content:"24時間営業 · OPEN 24H";position:absolute;left:228px;top:14px;padding:3px 12px;background:#fff;color:#00984a;font:900 12px var(--jp);border-radius:0 0 8px 8px;box-shadow:0 2px 0 #d7e0e3}
+#room{--bg:#f4f8f9;--ink:#1d2733;--ac:#00984a;background:none;color:#1d2733;margin:34px 24px 28px 230px;border:0;min-height:calc(100vh - 62px)}.rv{transform:none}
+#os{background:#fff;color:#1d2733;border-right:6px solid #00984a;box-shadow:4px 0 0 #f47a20}#os .br{font:900 24px var(--jp);color:#00984a}#os .br::after{content:"コンビニ · 24H";display:block;font:700 11px var(--jp);color:#f47a20;letter-spacing:.12em}
+#os a{font:700 15px var(--sans);color:#4a5b66;text-decoration:none!important;opacity:1;transform:none}#os a.on{color:#e60012;background:#fff4e0}#os a::after{display:block;font:500 10px var(--jp);color:#8a98a2}#os button{font:700 13px var(--sans);color:#1d2733}#os .m{color:#8a98a2}
+#os [data-r=thoughts]::after{content:"レシート"}#os [data-r=people]::after{content:"ポイントカード"}#os [data-r=brain]::after{content:"棚札"}#os [data-r=lives]::after{content:"ショーケース"}#os [data-r=queue]::after{content:"お会計"}#os [data-r=feelings]::after{content:"自動販売機"}#os [data-r=questions]::after{content:"POP"}#os [data-r=now]::after{content:"店内モニター"}
+.h{display:inline-block;font:900 clamp(26px,4.2vw,50px)/1.2 var(--jp);color:#fff;background:#00984a;padding:14px 24px 6px;border-radius:8px;box-shadow:inset 0 8px 0 #f47a20,inset 0 12px 0 #e60012,0 5px 0 #006b35}.h::after{display:none}
+.m{font:12px/1.5 var(--mono);letter-spacing:.02em;text-transform:none;color:#6a7b86}.sub{font:500 16px var(--sans)}.hand{font:700 17px var(--sans)}a:hover{background:#fff35c;color:#1d2733}
+/* thoughts, feelings answer, pull card → レシート */
+.nts{display:flex;flex-wrap:wrap;gap:30px 26px;align-items:flex-start;margin-top:4vh}
+:is(.nt,.res){position:relative;background:#fff;color:#222;border-radius:0;transform:none;filter:drop-shadow(0 3px 4px #0003);-webkit-mask:conic-gradient(from -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) 50%/14px 100%;mask:conic-gradient(from -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) 50%/14px 100%}
+.nt{width:min(330px,100%);max-width:none;margin:0;padding:14px 18px 30px;font:15px/1.6 var(--mono);rotate:-.8deg}.nt:nth-child(2n){rotate:.9deg;margin-top:20px}
+.nt::before{content:"レシート · RECEIPT\A 2:17 MART 24時間店";white-space:pre;display:block;text-align:center;font:12px/1.4 var(--mono);padding-bottom:6px;margin-bottom:8px;border-bottom:1px dashed #222}
+.nt::after{content:"ありがとうございました\Aまたのお越しをお待ちしております";white-space:pre;display:block;text-align:center;margin-top:12px;padding-top:8px;border-top:1px dashed #222;font:11px/1.5 var(--mono);opacity:.7}
+.nt b{display:block;background:none;margin:0 0 6px;padding:0;font:12px var(--mono);letter-spacing:.06em;color:#e60012}.nt b::after{content:" · 税込";background:none}
+/* people → ポイントカード */
+.pol{position:relative;padding:44px 14px 14px;background:#fff;color:#1d2733;border:2px solid #d7e0e3;border-radius:14px;box-shadow:0 5px 0 #d7e0e3;overflow:hidden;transform:none}
+.pol::before{content:"POINT CARD · ポイントカード";position:absolute;inset:0 0 auto;height:30px;line-height:30px;padding-left:14px;color:#fff;font:700 11px var(--sans);letter-spacing:.14em;background:linear-gradient(90deg,#00984a 0 62%,#f47a20 62% 82%,#e60012 82%)}
+.pol .ph{border:3px solid #fff;border-radius:10px;box-shadow:0 0 0 2px #00984a;filter:none}.pol h3{font:900 20px var(--jp);color:#1d2733;text-transform:none}.pol .nn{font:14px/1.5 var(--sans)}
+.tg{border-radius:99px;background:#e6f5ec;color:#00984a;border:0;font:700 10px var(--sans)}.pol small{font:12px var(--mono);color:#e60012;transform:none}.pol small::before{content:"No.0217 · "}
+/* brain → 棚札 (shelf price tags) */
+.bx{position:relative;background:#fff;border:2px solid #1d2733;border-top:10px solid #f47a20;border-radius:4px;box-shadow:0 4px 0 #d7e0e3;transform:none}.bx::after{content:"税込";position:absolute;right:10px;top:12px;font:900 11px var(--jp);color:#e60012}
+.bx h3{font:900 21px var(--jp);text-transform:none;color:#1d2733}.bx .nn{font:14px/1.5 var(--sans)}.st{border-radius:3px;background:#e60012;color:#fff;font:900 11px var(--jp);transform:none;animation:none}.bar b{color:#00984a;font:13px var(--mono)}.mc{font:700 15px var(--sans);color:#e60012}
+/* questions → handwritten POP, now → in-store monitors */
+.cd{background:#fff35c;color:#d6001c;border:3px solid #e60012;border-radius:10px;box-shadow:0 5px 0 #e6001244;rotate:-1.5deg;transform:none}.cd:nth-child(2n){rotate:1.2deg}.cd p{font:900 18px/1.45 var(--sans)}.cd .up{font:900 17px var(--sans);color:#1d2733}
+.cd::before{content:"気になる!";display:block;width:max-content;margin-bottom:6px;padding:1px 12px;background:#e60012;color:#fff;font:900 12px var(--jp);border-radius:99px}
+.win{background:#fff;border:2px solid #1d2733;border-radius:8px;box-shadow:0 4px 0 #d7e0e3;rotate:0deg;transform:none}.tb{background:#00984a;color:#fff;font:700 12px var(--sans);letter-spacing:.1em}.win p{font:900 20px var(--jp);color:#1d2733}.lv{filter:saturate(.95)}
+/* queue → お会計: shelf on the left, the register receipt on the right (every line ¥117, ¥217, ¥317…) */
+.qa{background:#fff;color:#1d2733;border:2px solid #1d2733;border-top:6px solid #f47a20;border-radius:4px;font:700 14px var(--sans)}.qa:hover{background:#fff4e0;color:#1d2733}
+#qq{background:#fff;color:#222;padding:16px 18px 38px;filter:drop-shadow(0 3px 5px #0003);-webkit-mask:conic-gradient(from -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) 50%/14px 100%;mask:conic-gradient(from -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) 50%/14px 100%}
+#qq .qh2::before{content:"お会計 · REGISTER 01\A";white-space:pre;display:block;text-align:center;font:13px/1.8 var(--mono);padding-bottom:6px;margin-bottom:6px;border-bottom:1px dashed #222;letter-spacing:.04em}
+.qi{background:none;border:0;border-bottom:1px dotted #9aa8b0;border-radius:0;color:#222;font:14px var(--mono);padding:4px 0}.qi::after{content:attr(data-p);order:3;font:700 15px var(--mono)}.qb{order:4}.qk{color:#00984a;border-color:#00984a}
+.ql::after{content:"合計  ¥" attr(data-sum) "\Aありがとうございました";white-space:pre;display:block;margin-top:12px;padding-top:8px;border-top:2px dashed #222;text-align:right;font:700 17px/1.5 var(--mono)}.qi.done .qt::after{content:" ✓ 済"}.qi.done .qt{text-decoration:none}
+.qe{font:15px/1.6 var(--sans)}.qbn{border-color:#00984a}
+/* feelings → 自動販売機 buttons */
+.chip{background:#fff;color:#1d2733;border:2px solid #1d2733;border-radius:99px;font:700 14px var(--sans);box-shadow:0 3px 0 #1d2733}.chip:hover{background:#e6f5ec;color:#1d2733;box-shadow:0 3px 0 #1d2733}.chip.on{background:#00984a;color:#fff;box-shadow:0 1px 0 #1d2733;translate:0 2px}
+.res{max-width:420px;padding:18px 20px 30px}.res p{font:15px/1.6 var(--mono)}.res h4{font:700 14px var(--sans);letter-spacing:.1em;color:#e60012}.res .h{display:block;background:none;box-shadow:none;color:#1d2733;padding:0;font:900 24px var(--jp)}
+.addhere{border:2px dashed #1d2733;color:#1d2733;background:#fffc;font:700 15px var(--sans)}.addhere:hover{background:#fff35c;color:#1d2733}
+/* the opening: the shop front at night — stripe, lit floor, 自動ドア */
+#door{background:linear-gradient(#0d1b33,#16294a 60%,#0b1424);color:#e8f1f5}#door::before{content:"";position:absolute;left:0;right:0;top:9%;height:46px;background:linear-gradient(#00984a 0 34%,#f47a20 34% 67%,#e60012 67%);box-shadow:0 0 70px #ffffff66}#door::after{content:"";position:absolute;left:0;right:0;bottom:0;height:24%;background:linear-gradient(#0000,#dff1ff55 45%,#f4fbff);pointer-events:none}#door>*{position:relative;z-index:1}
+#door h1{font:900 clamp(48px,11vw,140px)/1 var(--jp);color:#fff;letter-spacing:.02em;text-shadow:0 0 20px #fff9,0 0 70px #7fd0ff88}.d1{font:700 22px var(--sans);color:#cfe8f5}.d1::after{content:" · いらっしゃいませ"}.d2{font:15px var(--mono);color:#9fe6b8}.dtag{font:14px var(--sans);color:#aac4d4}
+#enter{background:#fff;color:#00984a;border:3px solid #00984a;border-radius:99px;padding:10px 30px;font:900 18px var(--sans);letter-spacing:.06em;box-shadow:0 5px 0 #006b35}#enter:hover{background:#e6f5ec;letter-spacing:.06em}
+#pull .pc{--bg:#fff;--ink:#222;--ac:#00984a;background:#fff;color:#222;border:2px dashed #1d2733;padding:26px}.pc h3{font:900 clamp(28px,5vw,48px)/1.1 var(--jp);text-transform:none;color:#1d2733}.pk{font-family:var(--mono)}
+#mb2,#mm{background:#fff;color:#1d2733;border:2px solid #00984a;animation:none;font:700 14px var(--sans)}.disc{border-radius:50%;background:#00984a;color:#fff}#mm button:hover,#mm .sel{background:#e6f5ec;color:#1d2733}
+@media(max-width:800px){#room{margin:22px 12px 12px}.lv{height:100dvh}}
 }

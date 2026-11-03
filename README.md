@@ -8,11 +8,8 @@ Open the site, step into any room, press **[ ✎ add to this room ]** in the men
 - **[ hide sample content ]** removes my example items from that room.
 - To hide the ✎ button from visitors: open `editor.js` and change `SHOW_EDIT=true` to `SHOW_EDIT=false`.
 
-## Change the whole website’s theme (skins)
-In the menu press **[ ◐ skin ]** (or press the **t** key) and pick one: dial-up diary, win98 night shift, strawberry milk, matcha library, vhs rental, convenience store 3am, sepia library card. To make your own, open `content/skins.js`, copy one line, change the name and the #hex colors.
-
-## Worlds (4 full visual themes)
-Menu top right → **[ ◈ world ]** (or press **w**): the writer, the lost internet, the film, the bedroom, or "the usual". A world changes fonts, layout, textures, cards, buttons, motion and hover states for every room, but not the content. Colour skins (◐) are paused while a world is on. Visuals live in `themes.css` (one block per world), the switcher in `themes.js`.
+## Worlds (8 full looks)
+Menu top right → **[ ◈ world ]** (or press **w**): the writer, the lost computer, the film, the bedroom, **the arcade, the night train, the scrapbook, the convenience store**, or "the usual". A world changes fonts, layout, textures, cards, buttons, motion and hover states for every room, but not the content. Colour skins (◐) are paused while a world is on. Visuals live in `themes.css` (one block per world), the switcher in `themes.js`.
 
 ## The other way: edit the files
 ## Where things live
@@ -127,3 +124,31 @@ Before, an mp3 added with ✎ stayed in your own browser. Now (when shared mode 
 - If you are not online or not signed in, ✎ still saves the mp3 in your browser only, like before.
 - Order the site looks for a song: `audio:"…"` in `content/songs.js` → shared mp3 → this browser → `music/<song-title>.mp3`.
 - Use music you own or have the right to share. A public site with other people's songs can be taken down.
+
+## New: 3 worlds, 1 niche (and the theme button is gone)
+- **the arcade:** Game Boy green on a CRT with scanlines and pixel fonts. Thoughts are RPG dialog boxes, hours are save slots, feelings are a menu with a blinking cursor.
+- **the deep sea:** dark water with bubbles rising slowly. Thoughts are bubbles that drift up, people are softly glowing jellyfish.
+- **the scrapbook:** kraft paper with washi tape, stickers and torn scraps. Thoughts are taped notes, people are polaroids, feelings are stickers.
+- **niche "games, save file"** (✦ niche): rooms become patch notes, party, library, worlds, sessions, mood picker, side quests, now playing. Calm night-indigo opening with a pixel title. Words and sample games live in `content/niches.js` (4th block).
+- **[ ◐ theme ]** and the **t** key were removed. Each niche still keeps its own default colours; the look of the whole site is now chosen only with **◈ world**.
+- Looks for the worlds: `themes.css` blocks 5–7; the list of worlds: top of `themes.js`.
+
+## New: convenience store world, players per world, mood picker per niche
+- **the convenience store** (◈ world): 24h shop at 2am. A flickering neon tube on top, cold tiles, thoughts as receipts, people as member cards, hours as the hot-food menu board (every price ends in .17), feelings as vending buttons.
+- **The cassette / play button / now-playing pill** now has its own look in every world (writer, lost computer, film, bedroom, arcade, deep sea, scrapbook, store). Looks are at the bottom of `music.css`.
+- **Room 06 (mood picker) follows the niche.** Each niche has `feel:{ read, watch, listen, meet, think }` in `content/niches.js`: those are only the *titles* of the five answer blocks (games: PLAY / WATCH / LISTEN / PARTY UP WITH; music: ALBUM / LIVE / PLAY / ARTIST; video club: BINGE / WATCH TONIGHT / SOUNDTRACK / CHARACTER). Write whatever fits in the matching field of each mood, and leave a field out to hide that block.
+
+## New: room 05 is the Queue builder
+Room 05 (was "hours") is now **the queue**: the shelf on the left lists everything on the site (books, films, songs, quotes, people, lives, thoughts, questions); tap **＋** to add it to your queue on the right.
+- **Reorder:** drag the ⠿ handle (works with a finger too), or use ▲ ▼.
+- **Tick off:** the checkbox marks something as done (watched / played / read).
+- **Play:** if the queue has songs, **[ ▶ play queue ]** plays them one after another on the cassette. Each finished song gets ticked; songs without an mp3 are skipped. Same cassette and mp3 rules as the records room.
+- **Keep it:** **[ ↓ save as image ]** makes the story-sized card (in the style of the active world). **[ share link ]** copies/shares a link; whoever opens it is asked **[ use it ]** or **[ no thanks ]**. Your own queue is saved in your browser.
+- Files: `queue.js` (logic), `queue.css` (base look; each world skins it in `themes.css`). The `hours` content (`content/hours.js`) is still there for the `hour:` tag, it just has no room of its own any more.
+- Worlds: **night train** shows the queue as a departures board (first train 02:17, +17 min each); **convenience store** shows it as the register receipt (お会計, ¥117, ¥217, ¥317…).
+
+## New: the night train (replaces the deep sea)
+Dark platform, amber split-flap letters (headings and the logo flip like a station board; off with *reduce motion*), thoughts as LED announcement strips, people as tickets, brain chemistry as boarding passes, fictional lives as the view from the window with poles flashing past, questions as delay notices, feelings as destination buttons. Look: `themes.css` block 6; the flap letters: bottom of `themes.js`.
+
+## New: the convenience store is now Japanese
+Green / orange / red stripe, white fluorescent light on tiled floor, a 24時間営業 sign. Thoughts are レシート (thermal receipts), people are ポイントカード, brain chemistry are 棚札 (shelf price tags with 税込), questions are handwritten POP signs, feelings are vending-machine buttons, the queue is the お会計 receipt. The opening has the shop front at night and plays the door chime (ピンポーン) when you press [ enter ]. Fonts: Zen Maru Gothic, Noto Sans JP, DotGothic16 (load only while this world is on).

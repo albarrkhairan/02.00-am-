@@ -16,7 +16,7 @@ FM={thoughts:[{n:"thought",k:"thoughts",f:[["text","what’s on your mind?","are
 people:[{n:"person",k:"characters",f:[["name","name"],["from","from (film / book)"],["cat","group","sel",CAT],["note","what would happen if you met?","area"],["tags","tags (comma separated)","tags"]]}],
 brain:[{n:"book",k:"books",f:SC},{n:"film",k:"films",f:SC},{n:"song",k:"songs",f:[...SC,["audio","mp3 (optional)","audio"]]}],
 lives:[{n:"life",k:"fictionalLives",f:[["place","where / when"],["lines","the life — one line each","lines"],["basedOn","based on"],["g1","color 1","color","#3b2a6b"],["g2","color 2","color","#e0688a"]]}],
-hours:[{n:"a quote for an hour",k:"quotes",f:[["text","the quote / sentence","area"],["by","from (optional)"],["hour","which hour","sel",HR]]},{n:"a new hour",k:"hours",f:[["time","time (e.g. 05:30)"],["label","name of that hour"]]}],
+queue:[],hours:[{n:"a quote for an hour",k:"quotes",f:[["text","the quote / sentence","area"],["by","from (optional)"],["hour","which hour","sel",HR]]},{n:"a new hour",k:"hours",f:[["time","time (e.g. 05:30)"],["label","name of that hour"]]}],
 feelings:[{n:"feeling",k:"feelings",f:[["label","feeling (e.g. i can’t sleep)"],["read","read"],["watch","watch"],["listen","listen"],["meet","meet"],["think","think about","area"]]}],
 questions:[{n:"question",k:"questions",f:[["text","the question","area"],["status","status","sel","still thinking about this|probably never finding out|update: i think i understand now"],["update","your answer (only for ‘update’)"]]}],
 now:()=>[{n:"update",k:"current",f:C.current.map((x,i)=>["v"+i,x.icon+" "+x.label,"text",null,x.value])}]},

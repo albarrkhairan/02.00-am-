@@ -1,0 +1,16 @@
+/* ROOM 05 · THE QUEUE — base look (every world adds its own skin on top, see themes.css) */
+#qb{margin-top:3vh}.qw{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,6fr);gap:28px;align-items:start}
+.qh2{margin:0 0 10px;text-transform:uppercase;letter-spacing:.12em}
+.qa-l{display:flex;flex-direction:column;gap:6px;max-height:62vh;overflow:auto;margin-top:12px;padding-right:4px}
+.qa,.qi{display:flex;align-items:center;gap:10px;min-height:46px;padding:6px 12px;border:1.5px solid var(--ink);background:transparent;color:var(--ink);font:14px/1.3 var(--mono);text-align:left;border-radius:var(--rad,6px)}
+.qa:hover{background:var(--ink);color:var(--bg)}.qa i{margin-left:auto;font-style:normal;font-size:18px}.qa.in{opacity:.5}
+.qk{flex:none;font:700 10px var(--mono);letter-spacing:.1em;padding:2px 6px;border:1px solid currentColor;border-radius:3px;opacity:.8}.qt{flex:1;min-width:0;overflow-wrap:break-word;hyphens:auto}
+.ql{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}.qi{position:relative;background:var(--card,transparent);color:var(--ct,var(--ink));transition:opacity .2s}
+.qi.done{opacity:.5}.qi.done .qt{text-decoration:line-through}.qi.now{outline:2px solid var(--ac);outline-offset:2px}.qi.drag{opacity:.75;scale:1.02;box-shadow:0 8px 24px #0006;z-index:3}
+.qh{flex:none;width:34px;height:36px;border:0;background:none;color:inherit;font-size:20px;cursor:grab;touch-action:none}.qh:active{cursor:grabbing}
+.qc{flex:none;width:22px;height:22px;accent-color:var(--ac);cursor:pointer}.qb{flex:none;display:flex;gap:2px}.qb button{width:32px;height:36px;border:0;background:none;color:inherit;font-size:13px;opacity:.55}.qb button:hover{opacity:1}
+.qac{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}.qe{font:italic 17px/1.5 var(--serif);opacity:.75;max-width:34ch}
+.qbn{display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding:12px 16px;margin:0 0 18px;border:1.5px dashed var(--ac)}
+.qmu{max-width:440px;margin:0 0 22px}.qnp{margin:6px 0 0}#qf{min-height:1.4em;margin-top:10px}
+@media(max-width:800px){.qw{grid-template-columns:1fr}.qa-l{max-height:44vh}.qb button{width:28px}}
+body[data-room=queue] :is(#eo,#fab){display:none!important}

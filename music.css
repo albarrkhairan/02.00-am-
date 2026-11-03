@@ -107,3 +107,37 @@ html[data-theme=net] .mx{border:2px outset #fff;border-radius:0;background:#d4d0
 html[data-theme=film] .bx:has(.mu):not(:has(.pi)){padding-top:186px}
 html[data-theme=film] .bx:has(.mu):not(:has(.pi))::after{top:62px;height:100px}
 html[data-theme=film] .cap{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:20px}
+
+/* ===== players for the newer worlds ===== */
+/* the lost computer: an XP media player window */
+html[data-theme=net] .mu{background:#ece9d8;border:1px solid #0a3fd0;border-radius:6px 6px 2px 2px;box-shadow:2px 3px 6px #0003}
+html[data-theme=net] .mu::before{content:"🎵 Player";background:var(--xb);border-radius:5px 5px 0 0;font:700 12px Tahoma,sans-serif}
+html[data-theme=net] .cas{border:2px inset #7f9db9;background:#0b1f5c}html[data-theme=net] .cap,html[data-theme=net] .mt{color:#7dff9a}html[data-theme=net] .eq i{background:#7dff9a}
+html[data-theme=net] :is(.mb,.mu.no .mb,.mx){border:1px solid #003c74;border-radius:3px;background:var(--card);font-family:Tahoma,sans-serif}
+html[data-theme=net] #npl{background:#ece9d8;border:1px solid #0a3fd0;border-radius:6px;box-shadow:2px 3px 6px #0004}
+/* the arcade: a game cartridge with a pixel LCD */
+html[data-theme=arcade] .cb{fill:#306230;stroke:#0f380f;stroke-width:3}html[data-theme=arcade] :is(.cl,.rc){fill:#9bbc0f}html[data-theme=arcade] .cst{fill:#0f380f}html[data-theme=arcade] :is(.cw,.cb2){fill:#0f380f;stroke:#8bac0f}html[data-theme=arcade] .rs{stroke:#0f380f}html[data-theme=arcade] .sc{fill:#8bac0f}
+html[data-theme=arcade] .cas{filter:none;transform:none!important;image-rendering:pixelated}
+html[data-theme=arcade] .cap{font:20px/1 VT323,monospace;color:#0f380f}html[data-theme=arcade] .side{font:8px "Press Start 2P",monospace;color:#0f380f}
+html[data-theme=arcade] .mb,html[data-theme=arcade] .mu.no .mb{background:#8bac0f;color:#0f380f;border:3px solid #0f380f;border-radius:0;box-shadow:3px 3px 0 #306230;font:9px "Press Start 2P",monospace}html[data-theme=arcade] .mu.playing .mb{translate:2px 2px;box-shadow:1px 1px 0 #306230}html[data-theme=arcade] .mu.playing .mb::after{border-radius:0;border-color:#0f380f;animation-timing-function:steps(3)}
+html[data-theme=arcade] .eq i{background:#0f380f;animation-timing-function:steps(4)!important}html[data-theme=arcade] .mt{font:18px VT323,monospace;opacity:1}
+html[data-theme=arcade] .mseek::-webkit-slider-runnable-track{border-top:4px solid #0f380f;opacity:1}html[data-theme=arcade] .mseek::-webkit-slider-thumb{background:#0f380f;border:0;border-radius:0;transform:none;width:10px;height:14px;margin-top:-9px}
+html[data-theme=arcade] .mx{border:2px solid #0f380f;border-radius:0;font:8px "Press Start 2P",monospace;opacity:1}
+html[data-theme=arcade] #npl{background:#0f380f;color:#9bbc0f;border:3px solid #9bbc0f;border-radius:0;box-shadow:none;font:18px VT323,monospace}html[data-theme=arcade] #npl button{border:2px solid #9bbc0f;border-radius:0}
+/* the deep sea: a glass capsule that glows while it plays */
+/* the scrapbook: a taped paper cassette sticker */
+html[data-theme=scrap] .cb{fill:#fffdf6;stroke:#3a2f28;stroke-width:2}html[data-theme=scrap] .cl{fill:#fff3a8}html[data-theme=scrap] .cst{fill:#d9506f}html[data-theme=scrap] :is(.cw,.rc){fill:#f2c84b;stroke:#3a2f28}html[data-theme=scrap] .cb2{fill:#9fd8c4}html[data-theme=scrap] .rs{stroke:#3a2f28}html[data-theme=scrap] .sc{fill:#3a2f28}
+html[data-theme=scrap] .cas{filter:drop-shadow(2px 4px 0 #0003);transform:rotate(-3deg)}html[data-theme=scrap] .mu:hover .cas,html[data-theme=scrap] .mu.playing .cas{transform:rotate(2deg) scale(1.03)}
+html[data-theme=scrap] .cas::before{content:"";position:absolute;top:-10px;left:calc(50% - 34px);width:68px;height:18px;background:repeating-linear-gradient(135deg,#ffffff66 0 5px,#0000 5px 10px),#f4a6b8bb;rotate:-4deg;z-index:2}
+html[data-theme=scrap] :is(.cap,.side){font:700 22px Caveat,cursive;color:#3a2f28;letter-spacing:0}html[data-theme=scrap] .side{font:11px "Special Elite",monospace}
+html[data-theme=scrap] .mb,html[data-theme=scrap] .mu.no .mb{background:#f2c84b;color:#3a2f28;border:2px solid #3a2f28;box-shadow:2px 3px 0 #3a2f28;font:700 18px Caveat,cursive}html[data-theme=scrap] .mu.no .mb{background:none;border-style:dashed;box-shadow:none}html[data-theme=scrap] .mu.playing .mb{translate:1px 2px;box-shadow:1px 1px 0 #3a2f28}html[data-theme=scrap] .mu.playing .mb::after{border-color:#d9506f}
+html[data-theme=scrap] .eq i{background:#d9506f}html[data-theme=scrap] .mt{font:12px "Special Elite",monospace}
+html[data-theme=scrap] .mseek::-webkit-slider-thumb{background:#d9506f;border:2px solid #3a2f28;border-radius:50%;transform:none}
+html[data-theme=scrap] #npl{background:#fff3a8;color:#3a2f28;border:2px dashed #3a2f28;border-radius:3px;box-shadow:2px 4px 0 #0003;rotate:-1deg;font:700 17px Caveat,cursive}html[data-theme=scrap] #npl button{border:2px solid #3a2f28;border-radius:50%}
+
+/* the night train: an amber cassette */
+html[data-theme=train] .cb{fill:#121a28;stroke:#ffb300;stroke-width:1.4}html[data-theme=train] .cl{fill:#f1e6c8}html[data-theme=train] .cst{fill:#ffb300}html[data-theme=train] .cas{filter:drop-shadow(0 0 12px #ffb30044)}html[data-theme=train] :is(.cap,.side){font:600 16px Oswald,sans-serif;color:#2a2118}
+html[data-theme=train] .mb,html[data-theme=train] .mu.no .mb{background:#ffb300;color:#090d16;border:0;border-radius:3px}html[data-theme=train] .eq i{background:#ffb300}html[data-theme=train] .mt{font:13px "Share Tech Mono",monospace;color:#ffcf66}html[data-theme=train] #npl{background:#05070d;color:#ffcf66;border:1px solid #ffb30088;border-radius:3px}
+/* the konbini: a white store-brand tape */
+html[data-theme=store] .cb{fill:#fff;stroke:#00984a;stroke-width:1.8}html[data-theme=store] .cl{fill:#fff4e0}html[data-theme=store] .cst{fill:#f47a20}html[data-theme=store] .cas{filter:drop-shadow(0 4px 0 #d7e0e3)}html[data-theme=store] :is(.cap,.side){font:15px DotGothic16,monospace;color:#1d2733}
+html[data-theme=store] .mb,html[data-theme=store] .mu.no .mb{background:#00984a;color:#fff;border:0;border-radius:99px}html[data-theme=store] .eq i{background:#e60012}html[data-theme=store] .mt{font:13px DotGothic16,monospace;color:#1d2733}html[data-theme=store] #npl{background:#fff;color:#1d2733;border:2px solid #00984a;border-radius:99px}

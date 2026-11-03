@@ -1,6 +1,6 @@
 // UX clean-up: tombol "add to this room" di setiap room + tombol bawah untuk HP. Lihat ux.css.
 (()=>{const $=(s,r=document)=>r.querySelector(s);
-const NOUN={thoughts:"a thought",people:"a person",brain:"a book, film or song",lives:"a life",hours:"a quote or an hour",feelings:"a feeling",questions:"a question",now:null};
+const NOUN={thoughts:"a thought",people:"a person",brain:"a book, film or song",lives:"a life",feelings:"a feeling",questions:"a question",now:null};
 const mk=(c,t)=>{const b=document.createElement("button");b.type="button";b.className="addhere "+c;b.textContent=t;return b};
 const dress=()=>{const room=$("#room"),r=document.body.dataset.room;if(!room||!$("#eo")||!(r in NOUN)||$(".addhere",room))return;
 if(r=="lives"){room.querySelectorAll(".lv section").forEach(s=>s.append(mk("live","+ add to this room")));return}

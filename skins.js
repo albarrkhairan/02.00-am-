@@ -11,7 +11,4 @@ pop.innerHTML=SK.map((s,i)=>`<button data-s="${i}"><i style="background:${s.bg||
 let cur=0;try{cur=+localStorage.getItem("tiu217skin")||0}catch(e){}if(!SK[cur])cur=0;
 const set=i=>{cur=i;const r=document.documentElement;i?r.dataset.skin=i:r.removeAttribute("data-skin");[...pop.children].forEach((b,j)=>b.classList.toggle("on",j==i));const b=$("#so");if(b)b.textContent="◐ theme: "+SK[i].name;try{localStorage.setItem("tiu217skin",i)}catch(e){}};
 set(cur);
-addEventListener("load",()=>{const b=document.createElement("button");b.id="so";b.textContent="◐ theme: "+SK[cur].name;$("#os").insertBefore(b,$("#pl"))});
-document.addEventListener("click",ev=>{const t=ev.target,b=t.closest("#sk button");if(b){set(+b.dataset.s);pop.hidden=true;return}if(t.closest("#so"))pop.hidden=!pop.hidden;else if(!t.closest("#sk"))pop.hidden=true});
-addEventListener("keydown",ev=>{if(ev.key=="Escape")pop.hidden=true;if(ev.key=="t"&&!ev.metaKey&&!ev.ctrlKey&&!/INPUT|TEXTAREA|SELECT/.test(ev.target.tagName))set((cur+1)%SK.length)});
 })();

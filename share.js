@@ -7,7 +7,7 @@ const SCR={
 thoughts:()=>$$(".nt").map(n=>({a:T($("b",n),""),c:T(n)})),
 people:()=>$$(".pol:not([hidden])").map(n=>({a:T($(".m",n),""),b:T($("h3",n),""),c:T($(".nn",n),"")})),
 brain:()=>$$(".bx").map(n=>({a:T($(".st",n),"")+" · "+((T($(".bar b",n),"").match(/\d+%/)||[""])[0]),b:T($("h3",n),""),c:T($(".nn",n),"")})),
-hours:()=>$$("#hc .hi").map(n=>({a:T($("b",n),""),b:T($("em",n),""),c:T(n,"b,em,.pi,.by")})),
+queue:()=>$$("#qb .qi").map(n=>({a:T($(".qk",n),"")+(n.classList.contains("done")?" · done":""),b:T($(".qt",n),"")})),
 feelings:()=>$(".res")?$$(".res h4").map(h=>({a:T(h,""),c:T(h.nextElementSibling,"")})):$$(".chips .chip").map(x=>({b:T(x)})),
 questions:()=>$$(".cd").map(n=>({a:T($(".m",n),""),b:T($("p",n),""),c:T($(".up",n),"")})),
 now:()=>$$(".win").map(n=>({a:T($(".tb",n),"span"),b:T($("p",n),"")}))};
@@ -23,7 +23,7 @@ let items,title,sub="";
 if(sec){const g=getComputedStyle(sec);items=[{c:T($(".ls",sec))}];title=T($("h2",sec),"");sub=T($(".m",sec),"");
  if(th=="writer"){}else{const gr=c.createLinearGradient(0,0,W,H);gr.addColorStop(0,g.getPropertyValue("--g1").trim()||"#3b2a6b");gr.addColorStop(1,g.getPropertyValue("--g2").trim()||"#e0688a");bg=gr;ink="#fff";mu="#ffffffcc";ac="#fff"}}
 else{items=(SCR[room]||(()=>[]))();title=T($("#room h2.h")||$("#room .res .h")||$("#room .h"),"");const p=$("#room h2.h + p");sub=p?T(p,""):"";
- if(room=="hours"){const o=$(".hr.on");if(o)sub=T(o,".by")}if(room=="feelings"&&$(".res"))title=T($(".res h3"),"")}
+if(room=="feelings"&&$(".res"))title=T($(".res h3"),"")}
 c.fillStyle=th=="net"?"#0a0a4a":bg;c.fillRect(0,0,W,H);
 if(th=="net"){c.fillStyle=bg;c.fillRect(40,60,W-80,H-120);const g=c.createLinearGradient(40,0,W-40,0);g.addColorStop(0,"#000080");g.addColorStop(1,"#1084d0");c.fillStyle=g;c.fillRect(40,60,W-80,64);c.fillStyle="#fff";c.font="700 28px "+sr;c.fillText(brand+" — "+title,64,80);top=180;bot=H-140;x0=96}
 if(th=="film"){c.fillStyle="#000";c.fillRect(0,0,W,170);c.fillRect(0,H-170,W,170);top=250;bot=H-250}
